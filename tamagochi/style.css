@@ -1,0 +1,71 @@
+
+#container{ 
+    overflow: hidden;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+}
+#machango { 
+    float: left;
+    width: 30%;
+    padding: 5%;
+    margin-left: 35%;
+}
+.botones{
+    width: 70%;
+    margin: 0 auto;
+    float: left;
+    margin-left: 25%;
+}
+.btn{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 31px 30px;
+    border: 0px solid #a12737;
+    border-radius: 18px;
+    background: #f9ff4a;
+    background: linear-gradient(to bottom, #f9ff4a, #0e88ad);
+    font: normal normal bold 17px verdana;
+    color: #ffffff;
+    text-decoration: none;
+    float: left;
+    margin: 2%;
+}
+.btn:hover,
+.btn:focus {
+    border: 0px solid #ff3e58;
+    background: #ffff59;
+    background: linear-gradient(to bottom, #ffff59, #11a3d0);
+    color: #ffffff;
+    text-decoration: none;
+}
+.btn:active {
+    background: #95992c;
+    background: linear-gradient(to bottom, #95992c, #0e88ad);
+}
+.btn:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbklEQVRIid3VPUtcQRQG4MdlkUXCEqxELCy2WkSWIGIt/gNbuzT+ExGxCiGIiLWItQREbNcPxN4vEAVBbMRNSDbBYka4u9693l1iEV+YYt4557wzZ86c4T1iCnUMx3kFi5G7jaOOhbgGIzjARB6BItZxhm94xAbmMBk3MIfNuPYVF1iNvrkwgGscYyzDbgwnuIo+ubEipKGcw/YjjvAlb/BJPGA0wX1IsUtylejzKY/AupDXZ8xH51qCqwn5n09wK3G0oNA2L2IaWwnuHIe4S3D32I9rz9jCTErMFpTxG0NZRh0wgh/a0pl2ggJ+9iDQQL+2Uk2r24LwiLoVKaWRmfl6Cwzij1Db/8S3/QRN/NXhuK9gAL9ijI4CDdyg2oNANfo2sgSa2MVsDwKz2BEykIm0VvEaumoVhDb9Zs2OcMnfo2NWux4XWvq2HgqjhGWtH86Ulx/OUlbwvhxCFXwWmuCocImX2MMaTrvd+f+FJyLXTSGYtRcPAAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+#consola{
+    background-color: gray;
+        width: 50%;
+        margin: 0 auto;
+        float: left;
+        margin-left: 25%;
+        
+}
+#consola img{
+    width: 15%;
+
+}
