@@ -18,5 +18,5 @@ function gameloop(){
  const pasoTiempo = setInterval({
     jaspito.felicidad --
  }, 4000)
-    
+    borrar linea 21
  */
