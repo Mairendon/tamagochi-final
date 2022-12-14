@@ -14,7 +14,13 @@ export function Tama(felicidad, energia, diversion, estado, mensaje){
 Tama.prototype.comer = function () {
     this.felicidad++
     this.energia++;
-    
+    if(this.energia > 100){
+        return 'Estoy llenito'
+    } else if( this.energia = 0 ){
+    return 'Los muertos no hablan'
+    } else {
+        return '¡DAAME DE COMER!'
+    }
 }
 
 Tama.prototype.sueño = function () {
