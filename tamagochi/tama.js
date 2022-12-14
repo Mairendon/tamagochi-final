@@ -3,23 +3,27 @@ export function Tama(felicidad, energia, diversion, estado, mensaje){
     this.energia = energia;
     //this.suciedad = suciedad;
     this.diversion = diversion;
-   // this.salud = salud;
-   // this.amor = amor;
+    //this.salud = salud;
+    //this.amor = amor;
     this.estado = 0;
-    this.mensaje = "Esperando a que jueguen conmigo";
+    this.mensaje = "Hazme caso desgraciao";
+    this.machango = document.getElementById('machanguito')
     console.log("Mascota creada");
-
 }
 
-Tama.prototype.comer = function () {
-    this.felicidad++
-    this.energia++;
-    if(this.energia > 100){
+Tama.prototype.comer = function (alimento) {
+   //this.energia = this.energia +
+   
+    if(this.energia >= 100){
+        this.felicidad --
         return 'Estoy llenito'
-    } else if( this.energia = 0 ){
-    return 'Los muertos no hablan'
-    } else {
+    } else if( this.energia > 0){
+        this.machango.src = "./images/cama.png"
+        this.felicidad++
+        this.energia++;
         return '¡DAAME DE COMER!'
+    } else {
+        return 'Los muertos no hablan'
     }
 }
 
