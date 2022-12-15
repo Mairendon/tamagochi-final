@@ -1,4 +1,4 @@
-export function Tama(nombre, felicidad, energia, diversion, estado, mensaje){
+export function Tama(nombre, felicidad, energia, diversion){
     this.nombre = nombre;
     this.felicidad = felicidad;
     this.energia = energia;
@@ -8,9 +8,31 @@ export function Tama(nombre, felicidad, energia, diversion, estado, mensaje){
     //this.amor = amor;
     //this.estado = 0;
     //this.mensaje = "Hazme caso desgraciao";
+    this.time = 2 //time
+    this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
     console.log("Mascota creada");
 }
+Tama.prototype.vida = function () {
+  
+    var total = this.felicidad + this.energia + this.diversion;
+
+    if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0){
+        this.machango.src = "./images/muerto.jpeg"; /*imagen jaspi muerto */
+        this.machango.innerText = "he muerto"
+    } else if(total <= 150){ 
+        this.machango.src = " "; /*imagen jaspi pachucho */
+    } else if(total > 150) {
+        this.machango.src = "./images/vivo.jpeg "; /*imagen jaspi :) */
+    }
+this.felicidad = this.felicidad - this.time;
+this.energia = this.energia - this.time; 
+this.diversion = this.diversion - this.time; 
+document.getElementById('felicidad').innerText = this.felicidad + '%';
+document.getElementById('energia').innerText = this.energia + '%';
+document.getElementById('diversion').innerText = this.diversion + '%';   
+}
+
 Tama.prototype.comer = function (alimento) {
    //this.energia = this.energia +
    
@@ -27,9 +49,11 @@ Tama.prototype.comer = function (alimento) {
     }
 }
 Tama.prototype.sueño = function () {
+   console.log(this.felicidad)
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
+        this.machango.src = "./images/cama.png"
         return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia >= 80){
         this.felicidad--;
