@@ -38,13 +38,15 @@ Tama.prototype.comer = function (alimento) {
    
     if(this.energia >= 100){
         this.felicidad--;
+        this.machango.src = "./images/burger.jpeg"
         return 'Estoy llenito'
     } else if( this.energia > 0){
-        this.machango.src = "./images/cama.png"
         this.felicidad++;
         this.energia++;
+        this.machango.src = "./images/burger.jpeg"
         return '¡DAAME DE COMER!'
     } else {
+        this.machango.src = "./images/burger.jpeg"
         return 'Los muertos no hablan'
     }
 }
@@ -53,17 +55,19 @@ Tama.prototype.sueño = function () {
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
-        this.machango.src = "./images/cama.png"
+        this.machango.src = "./images/duerme.jpeg"
         return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia >= 80){
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.machango.src = "./images/duerme.jpeg"
         return '¡¡No quiero dormir!!'
     } else {
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.machango.src = "./images/duerme.jpeg"
         return 'Quiero dormir'
     }
 }
