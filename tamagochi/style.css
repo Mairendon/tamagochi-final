@@ -1,14 +1,16 @@
 body {
     background-color: #dafafd;
+    text-align: center;
 }
 #container{ 
     overflow: hidden;
-    width: 700px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
     margin: 0 auto;
     background-image: url(images/fondo.jpg);
     background-size: cover;
     border: 5px solid #4075bd;
+   
 
 }
 #machango { 
@@ -27,7 +29,8 @@ body {
     
 #consola{
     background-color: #4075bd;
-    width: 450px;
+    width: 500px;
+    height: 100px;
     margin: 0 auto;
     float: left;
     margin-left: 125px;
@@ -35,16 +38,16 @@ body {
     border-radius: 25px;
         
 }
-#consola img{
+/*#consola img{
  width: 75px;
     text-align: center;
     margin-left: 55px;
-}
+}*/
 
 .botones{
     width: 600px;
     margin: 0 auto;
-    margin-left: 105px;
+    margin-left: 115px;
 }
 .btn{
     display: inline-block;
@@ -83,11 +86,40 @@ body {
     position: relative;
     top: 0px;
     left: 0px;
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbklEQVRIid3VPUtcQRQG4MdlkUXCEqxELCy2WkSWIGIt/gNbuzT+ExGxCiGIiLWItQREbNcPxN4vEAVBbMRNSDbBYka4u9693l1iEV+YYt4557wzZ86c4T1iCnUMx3kFi5G7jaOOhbgGIzjARB6BItZxhm94xAbmMBk3MIfNuPYVF1iNvrkwgGscYyzDbgwnuIo+ubEipKGcw/YjjvAlb/BJPGA0wX1IsUtylejzKY/AupDXZ8xH51qCqwn5n09wK3G0oNA2L2IaWwnuHIe4S3D32I9rz9jCTErMFpTxG0NZRh0wgh/a0pl2ggJ+9iDQQL+2Uk2r24LwiLoVKaWRmfl6Cwzij1Db/8S3/QRN/NXhuK9gAL9ijI4CDdyg2oNANfo2sgSa2MVsDwKz2BEykIm0VvEaumoVhDb9Zs2OcMnfo2NWux4XWvq2HgqjhGWtH86Ulx/OUlbwvhxCFXwWmuCocImX2MMaTrvd+f+FJyLXTSGYtRcPAAAAAElFTkSuQmCC") no-repeat left center transparent;
+    /*background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbklEQVRIid3VPUtcQRQG4MdlkUXCEqxELCy2WkSWIGIt/gNbuzT+ExGxCiGIiLWItQREbNcPxN4vEAVBbMRNSDbBYka4u9693l1iEV+YYt4557wzZ86c4T1iCnUMx3kFi5G7jaOOhbgGIzjARB6BItZxhm94xAbmMBk3MIfNuPYVF1iNvrkwgGscYyzDbgwnuIo+ubEipKGcw/YjjvAlb/BJPGA0wX1IsUtylejzKY/AupDXZ8xH51qCqwn5n09wK3G0oNA2L2IaWwnuHIe4S3D32I9rz9jCTErMFpTxG0NZRh0wgh/a0pl2ggJ+9iDQQL+2Uk2r24LwiLoVKaWRmfl6Cwzij1Db/8S3/QRN/NXhuK9gAL9ijI4CDdyg2oNANfo2sgSa2MVsDwKz2BEykIm0VvEaumoVhDb9Zs2OcMnfo2NWux4XWvq2HgqjhGWtH86Ulx/OUlbwvhxCFXwWmuCocImX2MMaTrvd+f+FJyLXTSGYtRcPAAAAAElFTkSuQmCC") no-repeat left center transparent;*/
     background-size: 100% 100%;
 }
 
-#consola img{
-    width: 15%;
+button img{
+    width: auto;
+    text-align: center;
+
+}
+/*#comida {
+    background-image: url(./images/comida.png);
+    background-repeat: no-repeat;
+    width: auto;
+    text-align: center;
+}
+#cama {
+    background-image: url(./images/cama.png);
+    background-repeat: no-repeat;
+    width: auto;
+    text-align: center;
+}
+#juego {
+    background-image: url(./images/juego.png);
+    background-repeat: no-repeat;
+    width: auto;
+    text-align: center;
+}*/
+
+.status {
+    display: inline-block;
+    width: 100px;
+    background-color: aqua;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 3px 3px;
 
 }

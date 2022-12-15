@@ -1,5 +1,5 @@
-export function Tama(felicidad, energia, diversion, estado, mensaje){
-    this.name = nombre;
+export function Tama(nombre, felicidad, energia, diversion, estado, mensaje){
+    this.nombre = nombre;
     this.felicidad = felicidad;
     this.energia = energia;
     //this.suciedad = suciedad;
@@ -30,7 +30,7 @@ Tama.prototype.sueño = function () {
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
-        return 'Quiero dormir'
+        return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia >= 80){
         this.felicidad--;
         this.energia++;
@@ -40,7 +40,7 @@ Tama.prototype.sueño = function () {
         this.felicidad--;
         this.energia++;
         this.diversion--;
-        return 'Auxilio me desmayo...zzZZ'
+        return 'Quiero dormir'
     }
 }
 Tama.prototype.toy = function () {
@@ -64,6 +64,8 @@ Tama.prototype.toy = function () {
         return '¡No me canso de jugar!'
     }
 }
+
+/*
 Tama.prototype.vida() = function(time = 2) {
     //ver como arreglar o donde posicionar
 
@@ -77,3 +79,4 @@ Tama.prototype.vida() = function(time = 2) {
         return `${this.name} vivito y coleando`
     }
   }
+*/

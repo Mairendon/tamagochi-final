@@ -6,6 +6,7 @@ const mimir = document.getElementById('cama')
 const games = document.getElementById('juego')
 
 
+
 zampar.addEventListener('click', function(){ 
    console.log(jaspito.comer())
    
