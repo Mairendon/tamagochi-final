@@ -1,9 +1,11 @@
 import { Tama } from "./tama.js"
-const jaspito = new Tama ('Jaspito', 100, 100, 100)
+const jaspito = new Tama ('Jaspito', 100, 100, 100, 100)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
 const games = document.getElementById('juego')
+const baniar = document.getElementById('ducha')
+//const masticar = document.getElementById('comida')
 
 
 
@@ -15,7 +17,7 @@ function Start(){
          jaspito.machango.src = "./images/muerto.jpeg";
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 300);
+   }, 400);
    
    zampar.addEventListener('click', function(){ 
       console.log(jaspito.comer())
@@ -26,6 +28,12 @@ function Start(){
    games.addEventListener('click', function(){
      console.log(jaspito.toy())
    })
+   baniar.addEventListener('click', function(){
+      console.log(jaspito.lavar())
+   })
+  /* masticar.addEventListener('click',function(){
+      masticar.play(".images/masticar.mp3")
+   })*/
 }
 
 Start();
