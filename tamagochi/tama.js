@@ -23,7 +23,7 @@ Tama.prototype.vida = function () {
     } else if(total <= 150){ 
         this.machango.src = " "; /*imagen jaspi pachucho */
     } else if(total > 150) {
-        this.machango.src = "./images/vivo.jpeg "; /*imagen jaspi :) */
+        this.machango.src = "./images/vivo.jpeg"; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
 this.energia = this.energia - this.time; 

@@ -15,7 +15,7 @@ function Start(){
          jaspito.machango.src = "./images/muerto.jpeg";
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 500);
+   }, 2000);
    
    zampar.addEventListener('click', function(){ 
       console.log(jaspito.comer())
