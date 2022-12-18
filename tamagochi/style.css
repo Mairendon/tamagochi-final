@@ -7,26 +7,56 @@ body {
     width: 800px;
     height: 800px;
     margin: 0 auto;
-    background-image: url(images/fondo.jpg);
     background-size: cover;
     border: 5px solid #4075bd;
-   
+}
+
+.cielo{
+    background:url(images/cielo_pequeño.jpg) repeat-X;
+    animation: movebg 6s linear infinite;
+}
+.suelo {
+    background: url(images/suelo_pequeño.png);
+    
+    /* animation: movebg 9s linear infinite; */
+    margin-top: 215px;
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.personaje {
+    position: relative;
+    bottom: 100px;
+    width: 100%;
+    
 
 }
+@keyframes movebg {
+    0% { background-position:800px }
+    100% { background-position:0 }
+  }
+
 #machango { 
     float: left;
-    width: 500px;
-    height: 450px;
-    margin: 50px 100px 0px 100px;
+    width: 800px;
    
 }
 
 #machango img {
      width: 70%;
-    margin-top: 15%;
-    margin-left: 13%;
+  /*margin-top: 15%;
+    margin-left: 13%;*/
 }
-    
+.navegador {
+    overflow: hidden;
+    width: 800px;
+    margin: 0 auto;
+    background-color:crimson;
+    border: 5px solid #4075bd;
+}    
 #consola{
     background-color: #4075bd;
     width: 500px;
@@ -53,7 +83,7 @@ body {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
-    padding: 31px 30px;
+    padding: 15px 10px;
     border: 3px solid #ffffff;
     border-radius: 18px;
     background: #f9ff4a;
