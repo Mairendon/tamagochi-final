@@ -38,7 +38,7 @@ function Start(){
       console.log(jaspito.lavar())
       sonidoDucha.play()
    })
- 
+   console.log(jaspito.caca ())
 }
 
 Start();

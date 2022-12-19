@@ -9,9 +9,11 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     //this.amor = amor;
     //this.estado = 0;
     //this.mensaje = "Hazme caso desgraciao";
+    this.caca = document.getElementById('caca')
     this.time = 2 //time
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
+    this.fondoCielo = document.getElementsByClassName('cielo')[0]
     console.log("Mascota creada");
 }
 Tama.prototype.vida = function () {
@@ -23,13 +25,14 @@ Tama.prototype.vida = function () {
         this.machango.innerText = "he muerto"
     } else if(total <= 150){ 
         this.machango.src = " "; /*imagen jaspi pachucho */
-
+        this.fondoCielo.style.background = 'url(./images/cielo_critico.jpg)'
+        console.log(this.fondoCielo.style.url)
     } else if(total > 150) {
         this.machango.src = "./images/vivo.png "; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
-this.energia = this.energia - this.time; 
-this.diversion = this.diversion - this.time; 
+this.energia = this.energia - this.time ; //* 2 
+this.diversion = this.diversion - this.time  ; //*2
 this.suciedad = this.suciedad - this.time;
 document.getElementById('felicidad').innerText = this.felicidad + '%';
 document.getElementById('energia').innerText = this.energia + '%';
@@ -126,13 +129,25 @@ Tama.prototype.lavar = function () {
     }
 }
 Tama.prototype.caca = function () {
-    var count = 0
-    if(this.suciedad >= 80){
+   
+   
+    if (this.suciedad >= 80){
         this.felicidad++;
-        
+        this.suciedad--; 
+        this.caca.src = './images/popo.jpg'
     } else if (this.suciedad >= 60) {
-
-    } count ++;
+        this.felicidad++;
+        this.suciedad--; 
+        this.caca.src = './images/popo.jpg'
+    } else if (this.suciedad >= 40){
+        this.felicidad--;
+        this.suciedad--; 
+        this.caca.src = './images/popo.jpg'
+    } else if (this.suciedad >= 20){
+        this.felicidad--;
+        this.suciedad--; 
+       this.caca.src = './images/popo.jpg'
+    }
 }
 /*
 Tama.prototype.vida() = function(time = 2) {
