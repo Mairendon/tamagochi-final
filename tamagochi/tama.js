@@ -19,13 +19,13 @@ Tama.prototype.vida = function () {
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
 
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
-        this.machango.src = "./images/muerto.jpeg"; /*imagen jaspi muerto */
+        this.machango.src = "./images/muerto.png"; /*imagen jaspi muerto */
         this.machango.innerText = "he muerto"
     } else if(total <= 150){ 
         this.machango.src = " "; /*imagen jaspi pachucho */
 
     } else if(total > 150) {
-        this.machango.src = "./images/vivo.jpeg "; /*imagen jaspi :) */
+        this.machango.src = "./images/vivo.png "; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
 this.energia = this.energia - this.time; 
@@ -59,17 +59,19 @@ Tama.prototype.sueño = function () {
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
-        this.machango.src = "./images/cama.png"
+        this.machango.src = "./images/duerme.png"
         return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia >= 80){
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.machango.src = "./images/duerme.png"
         return '¡¡No quiero dormir!!'
     } else {
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.machango.src = "./images/duerme.png"
         return 'Quiero dormir'
     }
 }
@@ -123,7 +125,15 @@ Tama.prototype.lavar = function () {
         return '¡Que ya estoy limpio!'
     }
 }
+Tama.prototype.caca = function () {
+    var count = 0
+    if(this.suciedad >= 80){
+        this.felicidad++;
+        
+    } else if (this.suciedad >= ) {
 
+    } count ++;
+}
 /*
 Tama.prototype.vida() = function(time = 2) {
     //ver como arreglar o donde posicionar

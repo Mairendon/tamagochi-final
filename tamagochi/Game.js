@@ -5,7 +5,8 @@ const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
 const games = document.getElementById('juego')
 const baniar = document.getElementById('ducha')
-//const masticar = document.getElementById('comida')
+const masticar = document.getElementById('comida')
+const sonidoMasticar = new Audio("./images/masticar.mp3")
 
 
 
@@ -14,7 +15,7 @@ function Start(){
       jaspito.bindedVida()
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0|| jaspito.diversion <= 0){
          clearInterval(temporizador)
-         jaspito.machango.src = "./images/muerto.jpeg";
+         jaspito.machango.src = "./images/muerto.png";
          console.log ('¡Españoles Jaspito ha muerto!')
       }
    }, 400);
@@ -31,9 +32,9 @@ function Start(){
    baniar.addEventListener('click', function(){
       console.log(jaspito.lavar())
    })
-  /* masticar.addEventListener('click',function(){
-      masticar.play(".images/masticar.mp3")
-   })*/
+   masticar.addEventListener('click',function(){
+      sonidoMasticar.play()
+   })
 }
 
 Start();
