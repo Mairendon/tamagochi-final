@@ -7,7 +7,6 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     this.diversion = diversion;
     //this.salud = salud;
     //this.amor = amor;
-    //this.estado = 0;
     //this.mensaje = "Hazme caso desgraciao";
     this.caca = document.getElementById('caca')
     this.time = 2 //time
@@ -15,6 +14,7 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     this.machango = document.getElementById('machanguito')
     this.fondoCielo = document.getElementsByClassName('cielo')[0]
     console.log("Mascota creada");
+   // this.estado = document.getElementsByClassName('cielo');
 }
 Tama.prototype.vida = function () {
   
@@ -23,12 +23,14 @@ Tama.prototype.vida = function () {
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
         this.machango.src = "./images/muerto.png"; /*imagen jaspi muerto */
         this.machango.innerText = "he muerto"
-    } else if(total <= 150){ 
-        this.machango.src = " "; /*imagen jaspi pachucho */
+    } else if(total <= 200){ 
+        this.machango.src =  "./images/vivo.png"; /*imagen jaspi pachucho */
         this.fondoCielo.style.background = 'url(./images/cielo_critico.jpg)'
-        console.log(this.fondoCielo.style.url)
-    } else if(total > 150) {
-        this.machango.src = "./images/vivo.png "; /*imagen jaspi :) */
+        this.fondoCielo.style.backgroundSize = "cover"
+
+        //console.log(this.fondoCielo.style.url)
+    } else if(total > 200) {
+        this.machango.src = "./images/vivo.png"; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
 this.energia = this.energia - this.time ; //* 2 
