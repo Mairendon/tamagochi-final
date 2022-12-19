@@ -8,9 +8,11 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     //this.salud = salud;
     //this.amor = amor;
     //this.mensaje = "Hazme caso desgraciao";
+    this.caca = document.getElementById('caca')
     this.time = 2 //time
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
+    this.fondoCielo = document.getElementsByClassName('cielo')[0]
     console.log("Mascota creada");
    // this.estado = document.getElementsByClassName('cielo');
 }
@@ -19,17 +21,18 @@ Tama.prototype.vida = function () {
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
 
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
-        this.machango.src = "./images/muerto.jpeg"; /*imagen jaspi muerto */
+        this.machango.src = "./images/muerto.png"; /*imagen jaspi muerto */
         this.machango.innerText = "he muerto"
     } else if(total <= 150){ 
         this.machango.src = " "; /*imagen jaspi pachucho */
-      //  this.estado = 
+      //  this.estado =         this.fondoCielo.style.background = 'url(./images/cielo_critico.jpg)'
+        console.log(this.fondoCielo.style.url)
     } else if(total > 150) {
-        this.machango.src = "./images/vivo.jpeg "; /*imagen jaspi :) */
+        this.machango.src = "./images/vivo.png "; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
-this.energia = this.energia - this.time; 
-this.diversion = this.diversion - this.time; 
+this.energia = this.energia - this.time ; //* 2 
+this.diversion = this.diversion - this.time  ; //*2
 this.suciedad = this.suciedad - this.time;
 document.getElementById('felicidad').innerText = this.felicidad + '%';
 document.getElementById('energia').innerText = this.energia + '%';
@@ -59,17 +62,19 @@ Tama.prototype.sueño = function () {
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
-        this.machango.src = "./images/cama.png"
+        this.machango.src = "./images/duerme.png"
         return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia >= 80){
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.machango.src = "./images/duerme.png"
         return '¡¡No quiero dormir!!'
     } else {
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.machango.src = "./images/duerme.png"
         return 'Quiero dormir'
     }
 }
@@ -123,7 +128,27 @@ Tama.prototype.lavar = function () {
         return '¡Que ya estoy limpio!'
     }
 }
-
+Tama.prototype.caca = function () {
+   
+   
+    if (this.suciedad >= 80){
+        this.felicidad++;
+        this.suciedad--; 
+        this.caca.src = './images/popo.jpg'
+    } else if (this.suciedad >= 60) {
+        this.felicidad++;
+        this.suciedad--; 
+        this.caca.src = './images/popo.jpg'
+    } else if (this.suciedad >= 40){
+        this.felicidad--;
+        this.suciedad--; 
+        this.caca.src = './images/popo.jpg'
+    } else if (this.suciedad >= 20){
+        this.felicidad--;
+        this.suciedad--; 
+       this.caca.src = './images/popo.jpg'
+    }
+}
 /*
 Tama.prototype.vida() = function(time = 2) {
     //ver como arreglar o donde posicionar

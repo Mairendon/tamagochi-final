@@ -19,7 +19,7 @@ function Start(){
       jaspito.bindedVida()
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0|| jaspito.diversion <= 0){
          clearInterval(temporizador)
-         jaspito.machango.src = "./images/muerto.jpeg";
+         jaspito.machango.src = "./images/muerto.png";
          console.log ('¡Españoles Jaspito ha muerto!')
       }
    }, 400);
@@ -43,7 +43,7 @@ function Start(){
       let timeLluvia = setTimeout(rain)
 
    })
- 
+   console.log(jaspito.caca ())
 }
 
 Start();

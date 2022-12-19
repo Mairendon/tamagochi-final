@@ -15,7 +15,7 @@ body {
 }
 
 .cielo{
-    background:url(images/cielo_pequeño.jpg) repeat-X;
+    background: url(images/cielo_pequeño.jpg) repeat-X;
     animation: movebg 6s linear infinite;
 }
 .suelo {
@@ -27,7 +27,10 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+#caca{
+    margin-top: 215px;
+    height: 15px;
+}
 
 
 .personaje {
