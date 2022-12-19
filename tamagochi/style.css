@@ -17,12 +17,13 @@ body {
 .cielo{
     background: url(images/cielo_pequeño.jpg) repeat-X;
     animation: movebg 6s linear infinite;
+    background-size: cover;
 }
 .suelo {
     background: url(images/suelo_pequeño.png);
     
     /* animation: movebg 9s linear infinite; */
-    margin-top: 215px;
+    margin-top: 110px;
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -37,6 +38,7 @@ body {
     position: relative;
     bottom: 100px;
     width: 100%;
+    bottom: -200px;
     
 
 }
