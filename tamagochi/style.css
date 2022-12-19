@@ -1,9 +1,12 @@
 body {
     background-color: #dafafd;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+
 }
 #container{ 
     overflow: hidden;
+    position: relative;
     width: 800px;
     height: 800px;
     margin: 0 auto;
@@ -152,4 +155,41 @@ button img{
     border-radius: 4px;
     padding: 3px 3px;
 
+}
+
+/* LLUVIA*/
+
+#container .vapour {
+    /*position: absolute;
+    width: 100%;
+    height: 100%;*/
+    animation: vapour 10s linear infinite;
+}
+
+@keyframes vapour {
+    0%, 100% {
+        backdrop-filter: blur(0);
+    }
+    50% {
+        backdrop-filter: blur(2px);
+    }
+}
+
+
+#container i {
+    position: absolute;
+    width: 5px;
+    height: 30px;
+    top: -30px;
+    background: #d3d3d3;
+    animation: rain linear infinite;
+}
+
+@keyframes rain {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 100vh;
+    }
 }

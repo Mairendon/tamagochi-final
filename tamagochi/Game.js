@@ -1,4 +1,6 @@
 import { Tama } from "./tama.js"
+import { rain } from "./lluvia.js"
+
 const jaspito = new Tama ('Jaspito', 100, 100, 100, 100)
 
 const zampar = document.getElementById('comida')
@@ -37,6 +39,9 @@ function Start(){
    baniar.addEventListener('click', function(){
       console.log(jaspito.lavar())
       sonidoDucha.play()
+      rain()
+      let timeLluvia = setTimeout(rain)
+
    })
  
 }

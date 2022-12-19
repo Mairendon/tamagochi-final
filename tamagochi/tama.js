@@ -7,12 +7,12 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     this.diversion = diversion;
     //this.salud = salud;
     //this.amor = amor;
-    //this.estado = 0;
     //this.mensaje = "Hazme caso desgraciao";
     this.time = 2 //time
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
     console.log("Mascota creada");
+   // this.estado = document.getElementsByClassName('cielo');
 }
 Tama.prototype.vida = function () {
   
@@ -23,7 +23,7 @@ Tama.prototype.vida = function () {
         this.machango.innerText = "he muerto"
     } else if(total <= 150){ 
         this.machango.src = " "; /*imagen jaspi pachucho */
-
+      //  this.estado = 
     } else if(total > 150) {
         this.machango.src = "./images/vivo.jpeg "; /*imagen jaspi :) */
     }
