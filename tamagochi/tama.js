@@ -130,7 +130,7 @@ Tama.prototype.caca = function () {
     if(this.suciedad >= 80){
         this.felicidad++;
         
-    } else if (this.suciedad >= ) {
+    } else if (this.suciedad >= 60) {
 
     } count ++;
 }

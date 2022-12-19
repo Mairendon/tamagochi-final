@@ -6,8 +6,10 @@ const mimir = document.getElementById('cama')
 const games = document.getElementById('juego')
 const baniar = document.getElementById('ducha')
 const masticar = document.getElementById('comida')
-const sonidoMasticar = new Audio("./images/masticar.mp3")
-
+const sonidoMasticar = new Audio("./sonidos/masticar.mp3")
+const sonidoDormir = new Audio("./sonidos/roncar.mp3")
+const sonidoDucha = new Audio("./sonidos/ducha.mp3")
+const sonidoJugar = new Audio("./sonidos/jugar.mp3")
 
 
 function Start(){
@@ -22,19 +24,21 @@ function Start(){
    
    zampar.addEventListener('click', function(){ 
       console.log(jaspito.comer())
+      sonidoMasticar.play()
    })
    mimir.addEventListener('click', function(){
       console.log(jaspito.sueño())
+      sonidoDormir.play()
    })
    games.addEventListener('click', function(){
      console.log(jaspito.toy())
+     sonidoJugar.play()
    })
    baniar.addEventListener('click', function(){
       console.log(jaspito.lavar())
+      sonidoDucha.play()
    })
-   masticar.addEventListener('click',function(){
-      sonidoMasticar.play()
-   })
+ 
 }
 
 Start();
