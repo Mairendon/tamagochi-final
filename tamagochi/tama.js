@@ -167,7 +167,7 @@ Tama.prototype.caca = function (){
 }*/
 Tama.prototype.apareceCaca = function () {
    
-    if (this.suciedad < 80){
+    if (this.suciedad < 50){
         
         this.poo.src = './images/popo.jpg'
         console.log('mi amigo huele raro')
