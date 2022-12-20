@@ -14,6 +14,7 @@ const sonidoJugar = new Audio("./sonidos/jugar.mp3")
 
 function Start(){
    var temporizador = setInterval(function(){
+      jaspito.apareceCaca()
       jaspito.bindedVida()
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0|| jaspito.diversion <= 0){
          clearInterval(temporizador)
@@ -25,6 +26,7 @@ function Start(){
    }, 4000);
    
    zampar.addEventListener('click', function(){ 
+     
       console.log(jaspito.comer())
       sonidoMasticar.play()
    })

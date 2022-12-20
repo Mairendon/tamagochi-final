@@ -87,7 +87,7 @@ body {
     margin-left: 115px;
 }
 .btn{
-    display: inline-block;
+    /*display: inline-block;*/
     text-align: center;
     vertical-align: middle;
     padding: 15px 10px;
@@ -199,7 +199,6 @@ button img{
 }
 #caca{
     position: relative;
-    bottom: 100px;
-    width: 20%;
-    bottom: -200px;
+    bottom: 550px;
+    width: 10%;
 }
