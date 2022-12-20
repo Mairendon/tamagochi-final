@@ -38,7 +38,7 @@ function Start(){
       console.log(jaspito.lavar())
       sonidoDucha.play()
       rain()
-      let timeLluvia = setTimeout(rain)
+
    })
   
 }
