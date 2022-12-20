@@ -23,7 +23,7 @@ function Start(){
          jaspito.fondoCielo.style.backgroundSize = "cover"
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 400);
+   }, 4000);
    
    zampar.addEventListener('click', function(){ 
      

@@ -13,19 +13,22 @@ body {
     background-size: cover;
     border: 5px solid #4075bd;
 }
-
+.matorral {
+    margin-top: 150px;
+    position: absolute;
+}
 .cielo{
     background: url(images/cielo_pequeño.jpg) repeat-X;
     animation: movebg 6s linear infinite;
     background-size: cover;
 }
 .suelo {
-    background: url(images/suelo_pequeño.png);
+    background: url(images/fondo_suelo_min.png);
     
     /* animation: movebg 9s linear infinite; */
-    margin-top: 110px;
     background-position: bottom;
-    background-size: contain;
+    margin-top: 310px;
+    /*background-size: contain;*/
     background-repeat: no-repeat;
 }
 
@@ -35,7 +38,7 @@ body {
     bottom: 100px;
     width: 100%;
     bottom: -200px;
-    
+    bottom: 0px;
 
 }
 @keyframes movebg {
