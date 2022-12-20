@@ -8,7 +8,7 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     //this.salud = salud;
     //this.amor = amor;
     //this.mensaje = "Hazme caso desgraciao"
-    this.caca = document.getElementById('caca')
+    this.poo = document.getElementById('caca')
     this.time = 1 //time
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
@@ -47,27 +47,30 @@ document.getElementById('suciedad').innerText = this.suciedad + '%';
 Tama.prototype.comer = function (alimento) {
 
    
-    if(this.energia <= 100){
+    if(this.energia >= 100){
         this.felicidad--;
         this.suciedad--;
        
         return 'Estoy llenito'
-    } else if( this.energia > 0){
+    } else if( this.energia > 0 && this.energia < 30){
         this.machango.src = "./images/cama.png"
-        this.felicidad++;
-        this.energia++;
+        this.felicidad += 20;
+        this.energia += 5;
         this.suciedad--;
         
         return '¡DAAME DE COMER!'
-    } else {
-        return 'Los muertos no hablan'
-    }
+    } else if ( this.energia >= 30 && this.energia < 100){
+        this.felicidad++;
+        this.energia++;
+        this.suciedad -= 5;
+        return ('por pura gula')
+    } else { return 'Los muertos no hablan'} 
 }
 Tama.prototype.sueño = function () {
   
     if (this.energia < 10){
         this.felicidad++;
-        this.energia++;
+        this.energia += 20;
         this.machango.src = "./images/duerme.png"
         return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia <= 100 && this.energia >= 80){
@@ -100,12 +103,18 @@ Tama.prototype.toy = function () {
         this.diversion++;
         this.suciedad--;
         return '¡Quiero jugar!'
-    } else {
+    } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 && this.felicidad) {
         this.felicidad++;
         this.energia--;
         this.diversion++;
         this.suciedad--;
         return '¡No me canso de jugar!'
+
+    } else {
+        this.felicidad++;
+        this.energia--;
+        this.diversion++;
+        this.suciedad--;
     }
 }
 ////---------Prueba DUCHA---------------
@@ -119,18 +128,18 @@ Tama.prototype.lavar = function () {
     if (this.suciedad <= 30){
         this.diversion++;
         this.suciedad += 20; // si pongo +20 no suma vente punntos de golpe
-        this.poo.src = './images/caca'
+     
         return 'Ya era hora... Olia a zorruno'
     } else if (this.suciedad <= 60){
         this.felicidad++;
         this.energia--;
-        this.diversion--;
-        this.suciedad++;
+        this.diversion -= 5;
+        this.suciedad += 10;
         return 'No me quiero lavar no me voy a duchar asi cochino me quiero quedar'
-    } else {
-        this.felicidad--;
+    } else if (this.suciedad >=100 ){
+        this.felicidad -= 10;
         this.energia--;
-        this.diversion--;
+        this.diversion -= 15;
         this.suciedad++;
         return '¡Que ya estoy limpio!'
     }
@@ -154,28 +163,28 @@ Tama.prototype.caca = function (){
             return 'limpito como una patena'
         } 
         this.poo++;
-}
+}*/
 Tama.prototype.apareceCaca = function () {
-    if (this.suciedad <= 80){
-        this.felicidad++;
-        this.poo.src = ''
+   
+    if (this.suciedad < 80){
+        
+        this.poo.src = './images/popo.jpg'
         console.log('mi amigo huele raro')
-    } else if (this.suciedad <= 60) {
-        this.felicidad++;
-        this.poo.src = ''
-        console.log('ahora somos tres')
-    } else if (this.suciedad <= 40){
-        this.felicidad--;
-        this.poo.src = ''
+    } else if (this.suciedad < 40){
+        
+        this.poo.src = './images/comida.png'
         console.log('uno más para la colección')
-    } else if (this.suciedad <= 20){
-        this.felicidad--;
-        this.poo.src = ''
+    } else if (this.suciedad <= 20){ 
+        
+        this.poo.src = './images/game.png'
        console.log('quiero estar limpio')
     } else {
+        this.poo.src = '' //cosa encima de jaspito
         console.log('limpito como una patena')
     }
 }
+
+
 /*
 Tama.prototype.vida() = function(time = 2) {
     //ver como arreglar o donde posicionar
