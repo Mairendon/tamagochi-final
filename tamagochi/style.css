@@ -28,10 +28,6 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
-#caca{
-    margin-top: 215px;
-    height: 15px;
-}
 
 
 .personaje {
@@ -197,4 +193,10 @@ button img{
     100% {
         top: 100vh;
     }
+}
+#caca{
+    position: relative;
+    bottom: 100px;
+    width: 20%;
+    bottom: -200px;
 }

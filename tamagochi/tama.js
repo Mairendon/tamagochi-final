@@ -8,7 +8,7 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     //this.salud = salud;
     //this.amor = amor;
     //this.mensaje = "Hazme caso desgraciao";
-    this.caca = document.getElementById('caca')
+    this.poo = document.getElementById('caca')
     this.time = 2 //time
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
@@ -43,30 +43,32 @@ document.getElementById('suciedad').innerText = this.suciedad + '%';
 }
 
 Tama.prototype.comer = function (alimento) {
-   //this.energia = this.energia +
+
    
-    if(this.energia >= 100){
+    if(this.energia <= 100){
         this.felicidad--;
         this.suciedad--;
+       
         return 'Estoy llenito'
     } else if( this.energia > 0){
         this.machango.src = "./images/cama.png"
         this.felicidad++;
         this.energia++;
         this.suciedad--;
+        
         return '¡DAAME DE COMER!'
     } else {
         return 'Los muertos no hablan'
     }
 }
 Tama.prototype.sueño = function () {
-   console.log(this.felicidad)
+  
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
         this.machango.src = "./images/duerme.png"
         return 'Auxilio me desmayo...zzZZ'
-    } else if (this.energia >= 80){
+    } else if (this.energia <= 100 && this.energia >= 80){
         this.felicidad--;
         this.energia++;
         this.diversion--;
@@ -114,7 +116,8 @@ Tama.prototype.lavar = function () {
     //this.amor++;
     if (this.suciedad <= 30){
         this.diversion++;
-        this.suciedad++; // si pongo +20 no suma vente punntos de golpe
+        this.suciedad += 20; // si pongo +20 no suma vente punntos de golpe
+        
         return 'Ya era hora... Olia a zorruno'
     } else if (this.suciedad <= 60){
         this.felicidad++;
@@ -130,25 +133,45 @@ Tama.prototype.lavar = function () {
         return '¡Que ya estoy limpio!'
     }
 }
-Tama.prototype.caca = function () {
-   
-   
-    if (this.suciedad >= 80){
+/*
+Tama.prototype.caca = function (){
+    this.felicidad++;
+    this.poo++;
+        if (this.poo > 5 ){
+            this.felicidad++;
+            this.suciedad++;
+            console.log('hago caca')
+            return 'limpito como una patena'
+        } else if (this.poo >= 10 ) {
+            this.felicidad++;
+            this.suciedad++;
+            return 'tengo un amigo'
+        } else if (this.poo >= 20) {
+            return 'huele raruno'
+        } else {
+            return 'limpito como una patena'
+        } 
+        this.poo++;
+}
+Tama.prototype.apareceCaca = function () {
+    if (this.suciedad <= 80){
         this.felicidad++;
-        this.suciedad--; 
-        this.caca.src = './images/popo.jpg'
-    } else if (this.suciedad >= 60) {
+        this.poo.src = ''
+        console.log('mi amigo huele raro')
+    } else if (this.suciedad <= 60) {
         this.felicidad++;
-        this.suciedad--; 
-        this.caca.src = './images/popo.jpg'
-    } else if (this.suciedad >= 40){
+        this.poo.src = ''
+        console.log('ahora somos tres')
+    } else if (this.suciedad <= 40){
         this.felicidad--;
-        this.suciedad--; 
-        this.caca.src = './images/popo.jpg'
-    } else if (this.suciedad >= 20){
+        this.poo.src = ''
+        console.log('uno más para la colección')
+    } else if (this.suciedad <= 20){
         this.felicidad--;
-        this.suciedad--; 
-       this.caca.src = './images/popo.jpg'
+        this.poo.src = ''
+       console.log('quiero estar limpio')
+    } else {
+        console.log('limpito como una patena')
     }
 }
 /*

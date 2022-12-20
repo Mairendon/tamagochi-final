@@ -7,12 +7,10 @@ const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
 const games = document.getElementById('juego')
 const baniar = document.getElementById('ducha')
-const masticar = document.getElementById('comida')
 const sonidoMasticar = new Audio("./sonidos/masticar.mp3")
 const sonidoDormir = new Audio("./sonidos/roncar.mp3")
 const sonidoDucha = new Audio("./sonidos/ducha.mp3")
 const sonidoJugar = new Audio("./sonidos/jugar.mp3")
-
 
 function Start(){
    var temporizador = setInterval(function(){
@@ -41,9 +39,8 @@ function Start(){
       sonidoDucha.play()
       rain()
       let timeLluvia = setTimeout(rain)
-
    })
-   console.log(jaspito.caca ())
+  
 }
 
 Start();
