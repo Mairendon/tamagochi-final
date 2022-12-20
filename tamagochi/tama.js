@@ -46,8 +46,8 @@ document.getElementById('suciedad').innerText = this.suciedad + '%';
 
 Tama.prototype.comer = function (alimento) {
 
-   
-    if(this.energia <= 100){
+    console.log(this.energia)
+    if(this.energia >= 100){
         this.felicidad--;
         this.suciedad--;
        
@@ -64,7 +64,7 @@ Tama.prototype.comer = function (alimento) {
     }
 }
 Tama.prototype.sueño = function () {
-  
+    console.log(this.energia)
     if (this.energia < 10){
         this.felicidad++;
         this.energia++;
@@ -90,6 +90,7 @@ Tama.prototype.toy = function () {
     //this.suciedad - 4
     this.diversion++;
     //this.amor++;
+    console.log(this.felicidad)
     if (this.diversion <= 25){
         this.diversion++
         this.suciedad--;
@@ -119,7 +120,7 @@ Tama.prototype.lavar = function () {
     if (this.suciedad <= 30){
         this.diversion++;
         this.suciedad += 20; // si pongo +20 no suma vente punntos de golpe
-        this.poo.src = './images/caca'
+    //    this.poo.src = './images/caca'
         return 'Ya era hora... Olia a zorruno'
     } else if (this.suciedad <= 60){
         this.felicidad++;
