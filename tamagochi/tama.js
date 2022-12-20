@@ -119,7 +119,7 @@ Tama.prototype.lavar = function () {
     if (this.suciedad <= 30){
         this.diversion++;
         this.suciedad += 20; // si pongo +20 no suma vente punntos de golpe
-        
+        this.poo.src = './images/caca'
         return 'Ya era hora... Olia a zorruno'
     } else if (this.suciedad <= 60){
         this.felicidad++;
