@@ -9,7 +9,7 @@ export function Tama(nombre, felicidad, energia, suciedad, diversion){
     //this.amor = amor;
     //this.mensaje = "Hazme caso desgraciao";
     this.caca = document.getElementById('caca')
-    this.time = 2 //time
+    this.time = 1 //time
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
     this.fondoCielo = document.getElementsByClassName('cielo')[0]
@@ -22,6 +22,8 @@ Tama.prototype.vida = function () {
 
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
         this.machango.src = "./images/muerto.png"; /*imagen jaspi muerto */
+        this.fondoCielo.style.background = 'url(./images/cielo_muerto.jpg)'
+        this.fondoCielo.style.backgroundSize = "cover"
         this.machango.innerText = "he muerto"
     } else if(total <= 200){ 
         this.machango.src =  "./images/vivo.png"; /*imagen jaspi pachucho */
