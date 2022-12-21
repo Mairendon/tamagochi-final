@@ -27,7 +27,7 @@ body {
     
     /* animation: movebg 9s linear infinite; */
     background-position: bottom;
-    margin-top: 310px;
+    /*margin-top: 310px;*/
     /*background-size: contain;*/
     background-repeat: no-repeat;
 }
@@ -52,11 +52,22 @@ body {
    
 }
 
-#machango img {
+  /*#machango img {
      width: 70%;
-  /*margin-top: 15%;
-    margin-left: 13%;*/
+  margin-top: 15%;
+    margin-left: 13%;
+}*/
+
+#machanguito {
+    width: 70%;
 }
+/*
+#caca{
+    position: relative;
+    bottom: 550px;
+    width: 10%;
+}
+*/
 .navegador {
     overflow: hidden;
     width: 800px;
@@ -196,9 +207,4 @@ button img{
     100% {
         top: 100vh;
     }
-}
-#caca{
-    position: relative;
-    bottom: 550px;
-    width: 10%;
 }

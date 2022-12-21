@@ -1,10 +1,10 @@
-export function Tama(nombre, felicidad, energia, suciedad, diversion){
+export function Tama(nombre, felicidad, energia, diversion, suciedad){
     this.nombre = nombre;
     this.felicidad = felicidad;
     this.energia = energia;
     //ACTIVO SUCIEDAD
-    this.suciedad = suciedad;
     this.diversion = diversion;
+    this.suciedad = suciedad;
     //this.salud = salud;
     //this.amor = amor;
     //this.mensaje = "Hazme caso desgraciao"
@@ -169,7 +169,7 @@ Tama.prototype.apareceCaca = function () {
    
     if (this.suciedad < 80){
         
-        this.poo.src = './images/popo.jpg'
+        this.poo.src = './images/barro-1_min.png'
         console.log('mi amigo huele raro')
     } else if (this.suciedad < 40){
         
