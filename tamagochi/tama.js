@@ -10,6 +10,7 @@ export function Tama(nombre, felicidad, energia, diversion, suciedad){
     //this.mensaje = "Hazme caso desgraciao"
     this.poo = document.getElementById('caca')
     this.time = 1 //time
+    this.estado = false
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
     this.fondoCielo = document.getElementsByClassName('cielo')[0]
@@ -25,13 +26,13 @@ Tama.prototype.vida = function () {
         this.fondoCielo.style.background = 'url(./images/cielo_muerto.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         this.machango.innerText = "he muerto"
-    } else if(total <= 200){ 
+    } else if(total <= 200){ //&&
         this.machango.src =  "./images/vivo.png"; /*imagen jaspi pachucho */
         this.fondoCielo.style.background = 'url(./images/cielo_critico.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
 
         //console.log(this.fondoCielo.style.url)
-    } else if(total > 200) {
+    } else if(total > 200 ) { //&& añadir otro estado si esta ocurriendo no funcionar
         this.machango.src = "./images/vivo.png"; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
@@ -64,7 +65,9 @@ Tama.prototype.comer = function (alimento) {
         this.energia++;
         this.suciedad -= 5;
         return ('por pura gula')
-    } else { return 'Los muertos no hablan'} 
+    } else { 
+        return 'Los muertos no hablan'
+    } 
 }
 Tama.prototype.sueño = function () {
     console.log(this.energia)
@@ -167,7 +170,7 @@ Tama.prototype.caca = function (){
 }*/
 Tama.prototype.apareceCaca = function () {
    
-    if (this.suciedad < 80){
+    if (this.suciedad < 50){
         
         this.poo.src = './images/barro-1_min.png'
         console.log('mi amigo huele raro')

@@ -72,7 +72,7 @@ body {
     overflow: hidden;
     width: 800px;
     margin: 0 auto;
-    background-color:crimson;
+    background-color:rgb(11, 73, 29);
     border: 5px solid #4075bd;
 }    
 #consola{
@@ -93,25 +93,41 @@ body {
 }*/
 
 .botones{
-    width: 600px;
-    margin: 0 auto;
-    margin-left: 115px;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    min-width: 120px;
+    justify-content: space-between;
 }
 .btn{
     /*display: inline-block;*/
+    width: 120px;
+    height:120px;
     text-align: center;
-    vertical-align: middle;
-    padding: 15px 10px;
+    vertical-align: middle;   
     border: 3px solid #ffffff;
-    border-radius: 18px;
+    border-radius: 50%;
     background: #f9ff4a;
     background: linear-gradient(to bottom, #f9ff4a, #0e88ad);
-    font: normal normal bold 17px verdana;
     color: #ffffff;
     text-decoration: none;
-    float: left;
-    margin: 2%;
+   
+    overflow: hidden;
+
 }
+@keyframes slidein {
+    from {
+      transform: translateX(0%);
+    }
+  
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
 .btn:hover,
 .btn:focus {
     border: 3px solid #ffffff;
@@ -119,6 +135,7 @@ body {
     background: linear-gradient(to bottom, #ffff59, #11a3d0);
     color: #ffffff;
     text-decoration: none;
+   
 }
 .btn:active {
     background: #95992c;
@@ -139,29 +156,13 @@ body {
 }
 
 button img{
-    width: auto;
+    width: 70%;
     text-align: center;
-
+  
+} 
+button img:hover {
+    animation: slidein 3s;
 }
-/*#comida {
-    background-image: url(./images/comida.png);
-    background-repeat: no-repeat;
-    width: auto;
-    text-align: center;
-}
-#cama {
-    background-image: url(./images/cama.png);
-    background-repeat: no-repeat;
-    width: auto;
-    text-align: center;
-}
-#juego {
-    background-image: url(./images/juego.png);
-    background-repeat: no-repeat;
-    width: auto;
-    text-align: center;
-}*/
-
 .status {
     display: inline-block;
     width: 100px;
@@ -189,8 +190,6 @@ button img{
         backdrop-filter: blur(2px);
     }
 }
-
-
 #container i {
     position: absolute;
     width: 5px;
@@ -208,3 +207,47 @@ button img{
         top: 100vh;
     }
 }
+#caca{
+    position: absolute;
+    bottom: 550px;
+    width: 10%;
+}
+/*
+.botones {
+    position: absolute; 
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    display: flex;
+    min-width: 500px;
+    justify-content: space-between;
+}
+.botones button {
+    width: 120px;
+    height:120px;
+    display: block;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(126, 177, 172);
+    text-decoration: none;
+    overflow: hidden;
+    text-align: center;
+}
+.btn img {
+    width: 70%;
+}
+
+.botones img::before {
+    width: 50%;
+    display: block;
+    margin: 19px 0;
+    transition: all .5 ease-in-out;
+}
+.botones img:hover::before {
+    margin-top: -37px;
+}
+.botones img::after{
+    display: block;
+}*/
