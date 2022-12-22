@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 100, 100, 100, 49)
+const jaspito = new Tama ('Jaspito', 100, 100, 100, 80)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -16,14 +16,14 @@ function Start(){
    var temporizador = setInterval(function(){
       jaspito.apareceCaca()
       jaspito.bindedVida()
-      if (jaspito.felicidad <= 0 || jaspito.energia <= 0|| jaspito.diversion <= 0){
+      if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 || jaspito.suciedad <= 0) {
          clearInterval(temporizador)
-         jaspito.machango.src = "./images/muerto.png";
-         jaspito.fondoCielo.style.background = 'url(./images/cielo_muerto.jpg)'
+         jaspito.machango.style.background = 'url(./images/muerto.png)'; /*imagen jaspi muerto */
+         jaspito.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
          jaspito.fondoCielo.style.backgroundSize = "cover"
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 40000000);
+   }, 40);
    
    zampar.addEventListener('click', function(){ 
      
