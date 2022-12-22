@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 100, 100, 100, 100)
+const jaspito = new Tama ('Jaspito', 100, 100, 100, 49)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -23,7 +23,7 @@ function Start(){
          jaspito.fondoCielo.style.backgroundSize = "cover"
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 4000);
+   }, 40000000);
    
    zampar.addEventListener('click', function(){ 
      
