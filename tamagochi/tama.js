@@ -26,13 +26,13 @@ Tama.prototype.vida = function () {
         this.fondoCielo.style.background = 'url(./images/cielo_muerto.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         this.machango.innerText = "he muerto"
-    } else if(total <= 200){ //&&
+    } else if(total <= 200 && this.estado === false){ //&&
         this.machango.src =  "./images/vivo.png"; /*imagen jaspi pachucho */
         this.fondoCielo.style.background = 'url(./images/cielo_critico.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
 
         //console.log(this.fondoCielo.style.url)
-    } else if(total > 200 ) { //&& añadir otro estado si esta ocurriendo no funcionar
+    } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
         this.machango.src = "./images/vivo.png"; /*imagen jaspi :) */
     }
 this.felicidad = this.felicidad - this.time;
@@ -48,72 +48,85 @@ document.getElementById('suciedad').innerText = this.suciedad + '%';
 Tama.prototype.comer = function (alimento) {
 
 
-    if(this.energia >= 100){
+    if(this.energia >= 100 ){
         this.felicidad--;
         this.suciedad--;
-       
+        this.estado = true 
+        console.log(this.estado)
+        this.machango.src = "./images/cama.png"
         return 'Estoy llenito'
-    } else if( this.energia > 0 && this.energia < 30){
+    } else if( this.energia > 0 && this.energia < 30 ){
         this.machango.src = "./images/cama.png"
         this.felicidad += 20;
         this.energia += 5;
         this.suciedad--;
-        
+        this.estado = true
         return '¡DAAME DE COMER!'
-    } else if ( this.energia >= 30 && this.energia < 100){
+    } else if ( this.energia >= 30 && this.energia < 100 ){
         this.felicidad++;
         this.energia++;
         this.suciedad -= 5;
+        this.estado = true
+        this.machango.src = "./images/cama.png"
         return ('por pura gula')
     } else { 
         return 'Los muertos no hablan'
     } 
 }
 Tama.prototype.sueño = function () {
-    console.log(this.energia)
-    if (this.energia < 10){
+   // this.estado = true
+    if (this.energia < 10 ){
         this.felicidad++;
         this.energia += 20;
+        this.estado == true
         this.machango.src = "./images/duerme.png"
+        this.estado = true
+        console.log(this.estado)
         return 'Auxilio me desmayo...zzZZ'
-    } else if (this.energia <= 100 && this.energia >= 80){
+    } else if (this.energia <= 100 && this.energia >= 80 ){
         this.felicidad--;
         this.energia++;
         this.diversion--;
+        this.estado = true;
         this.machango.src = "./images/duerme.png"
+        console.log(this.estado)
         return '¡¡No quiero dormir!!'
     } else {
         this.felicidad--;
         this.energia++;
         this.diversion--;
         this.machango.src = "./images/duerme.png"
+        console.log(this.estado)
         return 'Quiero dormir'
     }
 }
 Tama.prototype.toy = function () {
     this.felicidad++;
     this.energia--;
-    //this.suciedad - 4
     this.diversion++;
-    //this.amor++;
-    console.log(this.felicidad)
-    if (this.diversion <= 25){
-        this.diversion++
+       if (this.diversion <= 25){
+        this.diversion += 20;
+        this.energia +=5;
         this.suciedad--;
+        this.estado = true
+        this.machango.src = "./images/bo-comer.png"
         return 'Me matas de aburrimiento'
     } else if (this.diversion > 40){
         this.felicidad++;
-        this.energia--;
-        this.diversion++;
+        this.energia -= 10;
+        this.diversion += 15;
         this.suciedad--;
+        this.estado = true
+        this.machango.src = "./images/bo-comer.png"
         return '¡Quiero jugar!'
-    } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 && this.felicidad) {
+    } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 || this.felicidad >= 100) {
         this.felicidad++;
         this.energia--;
         this.diversion++;
         this.suciedad--;
+        this.estado = true
+        this.machango.src = "./images/bo-comer.png"
         return '¡No me canso de jugar!'
-
     } else {
         this.felicidad++;
         this.energia--;
@@ -125,26 +138,28 @@ Tama.prototype.toy = function () {
 Tama.prototype.lavar = function () {
     this.felicidad++;
     this.energia--;
-    //this.suciedad - 4
     this.diversion--;
     this.suciedad++;
-    //this.amor++;
     if (this.suciedad <= 30){
         this.diversion++;
         this.suciedad += 20; // si pongo +20 no suma vente punntos de golpe
-
+        this.estado = false
+        console.log(this.estado)
         return 'Ya era hora... Olia a zorruno'
     } else if (this.suciedad <= 60){
         this.felicidad++;
         this.energia--;
         this.diversion -= 5;
         this.suciedad += 10;
+        this.estado = false
         return 'No me quiero lavar no me voy a duchar asi cochino me quiero quedar'
     } else if (this.suciedad >=100 ){
         this.felicidad -= 10;
         this.energia--;
         this.diversion -= 15;
         this.suciedad++;
+        this.estado = false
+        console.log(this.estado)
         return '¡Que ya estoy limpio!'
     }
 }
