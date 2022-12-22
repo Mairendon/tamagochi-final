@@ -1,5 +1,5 @@
 body {
-    background-color: #dafafd;
+    background-color: black;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 
@@ -11,7 +11,7 @@ body {
     height: 800px;
     margin: 0 auto;
     background-size: cover;
-    border: 5px solid #4075bd;
+
 }
 .matorral {
     margin-top: 150px;
@@ -24,10 +24,10 @@ body {
 }
 .suelo {
     background: url(images/fondo_suelo_min.png);
-    
+    /*margin-top: -200px;*/
     /* animation: movebg 9s linear infinite; */
     background-position: bottom;
-    /*margin-top: 310px;*/
+    margin-top: 310px;
     /*background-size: contain;*/
     background-repeat: no-repeat;
 }
@@ -59,21 +59,20 @@ body {
 }*/
 
 #machanguito {
-    width: 70%;
+    
 }
-/*
+
 #caca{
     position: relative;
-    bottom: 550px;
-    width: 10%;
+    top: 500px;
 }
-*/
+
 .navegador {
     overflow: hidden;
     width: 800px;
     margin: 0 auto;
-    background-color:rgb(11, 73, 29);
-    border: 5px solid #4075bd;
+    background-color:#28432f;
+    height: 200px;
 }    
 #consola{
     background-color: #4075bd;
@@ -93,14 +92,7 @@ body {
 }*/
 
 .botones{
-    position: absolute;
-    margin: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    min-width: 120px;
-    justify-content: space-between;
+
 }
 .btn{
     /*display: inline-block;*/
@@ -110,15 +102,17 @@ body {
     vertical-align: middle;   
     border: 3px solid #ffffff;
     border-radius: 50%;
-    background: #f9ff4a;
-    background: linear-gradient(to bottom, #f9ff4a, #0e88ad);
-    color: #ffffff;
+    margin-top: 50px;
+    background-color: white;
+   /* background: linear-gradient(to bottom, #f9ff4a, #0e88ad);
+   */ color: #ffffff;
+   margin: 40px 25px 20px 25px;
     text-decoration: none;
    
     overflow: hidden;
 
 }
-@keyframes slidein {
+/*@keyframes slidein {
     from {
       transform: translateX(0%);
     }
@@ -126,18 +120,20 @@ body {
     to {
       transform: translateX(100%);
     }
-  }
+  }*/
   
-.btn:hover,
-.btn:focus {
+.btn:hover {
     border: 3px solid #ffffff;
-    background: #ffff59;
-    background: linear-gradient(to bottom, #ffff59, #11a3d0);
+    background: black;
     color: #ffffff;
     text-decoration: none;
+    /* background: linear-gradient(to bottom, #ffff59, #11a3d0);
+  
+    width: 150px;
+    height: 150px; */
    
 }
-.btn:active {
+/*.btn:active {
     background: #95992c;
     background: linear-gradient(to bottom, #95992c, #0e88ad);
 }
@@ -151,17 +147,18 @@ body {
     position: relative;
     top: 0px;
     left: 0px;
-    /*background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbklEQVRIid3VPUtcQRQG4MdlkUXCEqxELCy2WkSWIGIt/gNbuzT+ExGxCiGIiLWItQREbNcPxN4vEAVBbMRNSDbBYka4u9693l1iEV+YYt4557wzZ86c4T1iCnUMx3kFi5G7jaOOhbgGIzjARB6BItZxhm94xAbmMBk3MIfNuPYVF1iNvrkwgGscYyzDbgwnuIo+ubEipKGcw/YjjvAlb/BJPGA0wX1IsUtylejzKY/AupDXZ8xH51qCqwn5n09wK3G0oNA2L2IaWwnuHIe4S3D32I9rz9jCTErMFpTxG0NZRh0wgh/a0pl2ggJ+9iDQQL+2Uk2r24LwiLoVKaWRmfl6Cwzij1Db/8S3/QRN/NXhuK9gAL9ijI4CDdyg2oNANfo2sgSa2MVsDwKz2BEykIm0VvEaumoVhDb9Zs2OcMnfo2NWux4XWvq2HgqjhGWtH86Ulx/OUlbwvhxCFXwWmuCocImX2MMaTrvd+f+FJyLXTSGYtRcPAAAAAElFTkSuQmCC") no-repeat left center transparent;*/
+    /*background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbklEQVRIid3VPUtcQRQG4MdlkUXCEqxELCy2WkSWIGIt/gNbuzT+ExGxCiGIiLWItQREbNcPxN4vEAVBbMRNSDbBYka4u9693l1iEV+YYt4557wzZ86c4T1iCnUMx3kFi5G7jaOOhbgGIzjARB6BItZxhm94xAbmMBk3MIfNuPYVF1iNvrkwgGscYyzDbgwnuIo+ubEipKGcw/YjjvAlb/BJPGA0wX1IsUtylejzKY/AupDXZ8xH51qCqwn5n09wK3G0oNA2L2IaWwnuHIe4S3D32I9rz9jCTErMFpTxG0NZRh0wgh/a0pl2ggJ+9iDQQL+2Uk2r24LwiLoVKaWRmfl6Cwzij1Db/8S3/QRN/NXhuK9gAL9ijI4CDdyg2oNANfo2sgSa2MVsDwKz2BEykIm0VvEaumoVhDb9Zs2OcMnfo2NWux4XWvq2HgqjhGWtH86Ulx/OUlbwvhxCFXwWmuCocImX2MMaTrvd+f+FJyLXTSGYtRcPAAAAAElFTkSuQmCC") no-repeat left center transparent;
     background-size: 100% 100%;
 }
+*/
 
 button img{
     width: 70%;
     text-align: center;
-  
 } 
 button img:hover {
     animation: slidein 3s;
+    width: 90%;
 }
 .status {
     display: inline-block;
@@ -207,10 +204,10 @@ button img:hover {
         top: 100vh;
     }
 }
-#caca{
-    position: absolute;
-    bottom: 550px;
-    width: 10%;
+
+footer {
+    margin-left: 22%;
+    margin-top: 50px;
 }
 /*
 .botones {
