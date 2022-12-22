@@ -140,6 +140,7 @@ Tama.prototype.lavar = function () {
     this.energia--;
     this.diversion--;
     this.suciedad++;
+    this.estado = false
     if (this.suciedad <= 30){
         this.diversion++;
         this.suciedad += 20; // si pongo +20 no suma vente punntos de golpe
