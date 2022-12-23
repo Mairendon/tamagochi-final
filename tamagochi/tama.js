@@ -18,12 +18,21 @@ export function Tama(nombre, felicidad, energia, diversion, suciedad){
    // this.estado = document.getElementsByClassName('cielo');
 }
 Tama.prototype.vida = function () {
+    this.felicidad = this.felicidad - this.time;
+    this.energia = this.energia - this.time ; //* 2 
+    this.diversion = this.diversion - this.time  ; //*2
+    this.suciedad = this.suciedad - this.time;
+    document.getElementById('felicidad').innerText = this.felicidad + '%';
+    document.getElementById('energia').innerText = this.energia + '%';
+    document.getElementById('diversion').innerText = this.diversion + '%';
+    document.getElementById('suciedad').innerText = this.suciedad + '%'; 
+
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
-        this.machango.style.background = 'url(./images/muerto.png)'; /*imagen jaspi muerto */
+        this.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
         this.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
-        this.machango.innerText = "he muerto"
+        //this.machango.innerText = "he muerto"
     } else if(total <= 200 && this.estado === false){ //&&
         this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
         this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
@@ -32,18 +41,10 @@ Tama.prototype.vida = function () {
         //console.log(this.fondoCielo.style.url)
     } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
         // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
-        this.machango.setAttribute('src',"./images/vivo.png") /*imagen jaspi :) */
+        this.machango.style.background =  "url(./images/jaspi-vivo_min.png)";/*imagen jaspi :) */
         
-        console.log(this.machango)
+        
     }
-    this.felicidad = this.felicidad - this.time;
-    this.energia = this.energia - this.time ; //* 2 
-    this.diversion = this.diversion - this.time  ; //*2
-    this.suciedad = this.suciedad - this.time;
-    document.getElementById('felicidad').innerText = this.felicidad + '%';
-    document.getElementById('energia').innerText = this.energia + '%';
-    document.getElementById('diversion').innerText = this.diversion + '%';
-    document.getElementById('suciedad').innerText = this.suciedad + '%';      
         
 }
 
@@ -55,10 +56,10 @@ Tama.prototype.comer = function (alimento) {
         this.suciedad--;
         this.estado = true 
         console.log(this.estado)
-        this.machango.src = "./images/cama.png"
+        this.machango.style.background = "url(./images/cama.png)" //poner gif de comida
         return 'Estoy llenito'
     } else if( this.energia > 0 && this.energia < 30 ) {
-        this.machango.src = "./images/cama.png"
+        this.machango.style.background = "url(./images/cama.png)" //poner gif de comida
         this.felicidad += 20;
         this.energia += 5;
         this.suciedad--;
@@ -69,7 +70,7 @@ Tama.prototype.comer = function (alimento) {
         this.energia++;
         this.suciedad -= 5;
         this.estado = true
-        this.machango.src = "./images/cama.png"
+        this.machango.style.background = "url(./images/cama.png)" //poner gif de comida
         return ('por pura gula')
     } else { 
         return 'Los muertos no hablan'
@@ -81,7 +82,7 @@ Tama.prototype.sueño = function () {
         this.felicidad++;
         this.energia += 20;
         this.estado == true
-        this.machango.src = "./images/duerme.png"
+        this.machango.style.background = "url(./images/jaspi-duerme_min.png)"
         this.estado = true
         console.log(this.estado)
         return 'Auxilio me desmayo...zzZZ'
@@ -90,14 +91,14 @@ Tama.prototype.sueño = function () {
         this.energia++;
         this.diversion--;
         this.estado = true;
-        this.machango.src = "./images/duerme.png"
+        this.machango.style.background = "url(./images/jaspi-duerme_min.png)"
         console.log(this.estado)
         return '¡¡No quiero dormir!!'
     } else {
         this.felicidad--;
         this.energia++;
         this.diversion--;
-        this.machango.src = "./images/duerme.png"
+        this.machango.style.background = "url(./images/jaspi-duerme_min.png)"
         console.log(this.estado)
         return 'Quiero dormir'
     }
@@ -111,7 +112,7 @@ Tama.prototype.toy = function () {
         this.energia +=5;
         this.suciedad--;
         this.estado = true
-        this.machango.src = "./images/bo-comer.png"
+        this.machango.style.background = "url(./images/ducha.png)" //cambiar por imagen de juego
         return 'Me matas de aburrimiento'
     } else if (this.diversion > 40){
         this.felicidad++;
@@ -119,7 +120,7 @@ Tama.prototype.toy = function () {
         this.diversion += 15;
         this.suciedad--;
         this.estado = true
-        this.machango.src = "./images/bo-comer.png"
+        this.machango.style.background = "url(./images/ducha.png)"//cambiar por imagen de juego
         return '¡Quiero jugar!'
     } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 || this.felicidad >= 100) {
         this.felicidad++;
@@ -127,7 +128,7 @@ Tama.prototype.toy = function () {
         this.diversion++;
         this.suciedad--;
         this.estado = true
-        this.machango.src = "./images/bo-comer.png"
+        this.machango.style.background = "url(./images/ducha.png)"//cambiar por imagen de juego
         return '¡No me canso de jugar!'
     } else {
         this.felicidad++;
@@ -166,60 +167,22 @@ Tama.prototype.lavar = function () {
         return '¡Que ya estoy limpio!'
     }
 }
-/*
-Tama.prototype.caca = function (){
-    this.felicidad++;
-    this.poo++;
-        if (this.poo > 5 ){
-            this.felicidad++;
-            this.suciedad++;
-            console.log('hago caca')
-            return 'limpito como una patena'
-        } else if (this.poo >= 10 ) {
-            this.felicidad++;
-            this.suciedad++;
-            return 'tengo un amigo'
-        } else if (this.poo >= 20) {
-            return 'huele raruno'
-        } else {
-            return 'limpito como una patena'
-        } 
-        this.poo++;
-}*/
 Tama.prototype.apareceCaca = function () {
   
     if (this.suciedad < 50){
-        
+        this.poo.style.display = 'block' //el block modifica el atributo que de base es none
         this.poo.background = 'url(./images/barro-1_min.png)'
         console.log('mi amigo huele raro')
     } else if (this.suciedad < 40){
-        
+        this.poo.style.display = 'block'
         this.poo.background = 'url(./images/barro-2_min.png)'
         console.log('uno más para la colección')
     } else if (this.suciedad <= 20){ 
-        
+        this.poo.style.display = 'block'
         this.poo.src = 'url(./images/barro-3_min.png)'
        console.log('quiero estar limpio')
     } else {
-        console.log(this.poo)
-        this.poo.setAttribute('src','') //cosa encima de jaspito
+        this.poo.style.display = 'none' //quita las cacas
         console.log('limpito como una patena')
     }
 }
-
-
-/*
-Tama.prototype.vida() = function(time = 2) {
-    //ver como arreglar o donde posicionar
-
-    let total = this.energia + this.felicidad + this.diversion
-    console.log('hola')
-    if (total <= 0 ){
-        return `${this.name} l'ha palmao`
-    } else if (total < 150){
-        return`${this.name} viviendo que es poco`
-    } else {
-        return `${this.name} vivito y coleando`
-    }
-  }
-*/

@@ -18,7 +18,7 @@ function Start() {
       jaspito.bindedVida()
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 || jaspito.suciedad <= 0) {
          clearInterval(temporizador)
-         jaspito.machango.style.background = 'url(./images/muerto.png)'; /*imagen jaspi muerto */
+         jaspito.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
          jaspito.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
          jaspito.fondoCielo.style.backgroundSize = "cover"
          console.log ('¡Españoles Jaspito ha muerto!')
