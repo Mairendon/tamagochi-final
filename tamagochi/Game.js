@@ -16,14 +16,14 @@ function Start(){
    var temporizador = setInterval(function(){
       jaspito.apareceCaca()
       jaspito.bindedVida()
-      if (jaspito.felicidad <= 0 || jaspito.energia <= 0|| jaspito.diversion <= 0){
+      if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 ) {
          clearInterval(temporizador)
          jaspito.machango.src = "./images/muerto.png";
          jaspito.fondoCielo.style.background = 'url(./images/cielo_muerto.jpg)'
          jaspito.fondoCielo.style.backgroundSize = "cover"
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 40000000);
+   }, 4000);
    
    zampar.addEventListener('click', function(){ 
      
