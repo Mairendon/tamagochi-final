@@ -18,14 +18,6 @@ export function Tama(nombre, felicidad, energia, diversion, suciedad){
    // this.estado = document.getElementsByClassName('cielo');
 }
 Tama.prototype.vida = function () {
-    this.felicidad = this.felicidad - this.time;
-    this.energia = this.energia - this.time ; //* 2 
-    this.diversion = this.diversion - this.time  ; //*2
-    this.suciedad = this.suciedad - this.time;
-    document.getElementById('felicidad').innerText = this.felicidad + '%';
-    document.getElementById('energia').innerText = this.energia + '%';
-    document.getElementById('diversion').innerText = this.diversion + '%';
-    document.getElementById('suciedad').innerText = this.suciedad + '%';      
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
         this.machango.style.background = 'url(./images/muerto.png)'; /*imagen jaspi muerto */
@@ -36,35 +28,43 @@ Tama.prototype.vida = function () {
         this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
         this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
-
+        
         //console.log(this.fondoCielo.style.url)
     } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
-       // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
-    this.machango.setAttribute('src',"./images/vivo.png") /*imagen jaspi :) */
-       
-       console.log(this.machango)
+        // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
+        this.machango.setAttribute('src',"./images/vivo.png") /*imagen jaspi :) */
+        
+        console.log(this.machango)
     }
-   
+    this.felicidad = this.felicidad - this.time;
+    this.energia = this.energia - this.time ; //* 2 
+    this.diversion = this.diversion - this.time  ; //*2
+    this.suciedad = this.suciedad - this.time;
+    document.getElementById('felicidad').innerText = this.felicidad + '%';
+    document.getElementById('energia').innerText = this.energia + '%';
+    document.getElementById('diversion').innerText = this.diversion + '%';
+    document.getElementById('suciedad').innerText = this.suciedad + '%';      
+        
 }
 
 Tama.prototype.comer = function (alimento) {
 
 
-    if(this.energia >= 100 ){
+    if(this.energia >= 100 ) {
         this.felicidad--;
         this.suciedad--;
         this.estado = true 
         console.log(this.estado)
         this.machango.src = "./images/cama.png"
         return 'Estoy llenito'
-    } else if( this.energia > 0 && this.energia < 30 ){
+    } else if( this.energia > 0 && this.energia < 30 ) {
         this.machango.src = "./images/cama.png"
         this.felicidad += 20;
         this.energia += 5;
         this.suciedad--;
         this.estado = true
         return '¡DAAME DE COMER!'
-    } else if ( this.energia >= 30 && this.energia < 100 ){
+    } else if ( this.energia >= 30 && this.energia < 100 ) {
         this.felicidad++;
         this.energia++;
         this.suciedad -= 5;
