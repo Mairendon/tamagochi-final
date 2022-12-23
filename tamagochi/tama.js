@@ -18,31 +18,33 @@ export function Tama(nombre, felicidad, energia, diversion, suciedad){
    // this.estado = document.getElementsByClassName('cielo');
 }
 Tama.prototype.vida = function () {
-  
+    this.felicidad = this.felicidad - this.time;
+    this.energia = this.energia - this.time ; //* 2 
+    this.diversion = this.diversion - this.time  ; //*2
+    this.suciedad = this.suciedad - this.time;
+    document.getElementById('felicidad').innerText = this.felicidad + '%';
+    document.getElementById('energia').innerText = this.energia + '%';
+    document.getElementById('diversion').innerText = this.diversion + '%';
+    document.getElementById('suciedad').innerText = this.suciedad + '%';      
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
-
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
-        this.machango.src = "./images/muerto.png"; /*imagen jaspi muerto */
-        this.fondoCielo.style.background = 'url(./images/cielo_muerto.jpg)'
+        this.machango.style.background = 'url(./images/muerto.png)'; /*imagen jaspi muerto */
+        this.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         this.machango.innerText = "he muerto"
     } else if(total <= 200 && this.estado === false){ //&&
-        this.machango.src =  "./images/vivo.png"; /*imagen jaspi pachucho */
-        this.fondoCielo.style.background = 'url(./images/cielo_critico.jpg)'
+        this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
+        this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
 
         //console.log(this.fondoCielo.style.url)
     } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
-        this.machango.src = "./images/vivo.png"; /*imagen jaspi :) */
+       // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
+    this.machango.setAttribute('src',"./images/vivo.png") /*imagen jaspi :) */
+       
+       console.log(this.machango)
     }
-this.felicidad = this.felicidad - this.time;
-this.energia = this.energia - this.time ; //* 2 
-this.diversion = this.diversion - this.time  ; //*2
-this.suciedad = this.suciedad - this.time;
-document.getElementById('felicidad').innerText = this.felicidad + '%';
-document.getElementById('energia').innerText = this.energia + '%';
-document.getElementById('diversion').innerText = this.diversion + '%';
-document.getElementById('suciedad').innerText = this.suciedad + '%';      
+   
 }
 
 Tama.prototype.comer = function (alimento) {
@@ -185,21 +187,22 @@ Tama.prototype.caca = function (){
         this.poo++;
 }*/
 Tama.prototype.apareceCaca = function () {
-   
+  
     if (this.suciedad < 50){
         
-        this.poo.src = './images/barro-1_min.png'
+        this.poo.background = 'url(./images/barro-1_min.png)'
         console.log('mi amigo huele raro')
     } else if (this.suciedad < 40){
         
-        this.poo.src = './images/barro-1_min.png'
+        this.poo.background = 'url(./images/barro-2_min.png)'
         console.log('uno más para la colección')
     } else if (this.suciedad <= 20){ 
         
-        this.poo.src = './images/barro-1_min.png'
+        this.poo.src = 'url(./images/barro-3_min.png)'
        console.log('quiero estar limpio')
     } else {
-        this.poo.src = '' //cosa encima de jaspito
+        console.log(this.poo)
+        this.poo.setAttribute('src','') //cosa encima de jaspito
         console.log('limpito como una patena')
     }
 }
