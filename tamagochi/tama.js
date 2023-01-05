@@ -30,27 +30,26 @@ Tama.prototype.vida = function () {
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
         this.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
-        this.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
-        this.fondoCielo.style.backgroundSize = "cover"
+        this.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)';
+        this.fondoCielo.style.backgroundSize = "cover";
+        console.log('estoy muerto')
         //this.machango.innerText = "he muerto"
     } else if(total <= 200 && this.estado === false){ //&&
-        this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
-        this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
-        this.fondoCielo.style.backgroundSize = "cover"
-        
+        this.machango.style.background =  'url(./images/jaspi-pachucho_feo.png)'; /*imagen jaspi pachucho */
+        this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)';
+        this.fondoCielo.style.backgroundSize = "cover";
+        console.log('estoy pachucho')
         //console.log(this.fondoCielo.style.url)
     } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
         // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
-        this.machango.style.background =  "url(./images/jaspi-vivo_min.png)";/*imagen jaspi :) */
-        
-        
-    }
-        
+        this.machango.style.background =  'url(./images/jaspi-vivo_min.png)';/*imagen jaspi :) */
+        this.fondoCielo.style.background = 'url(./images/cielo_bueno_min.jpg)';
+        this.fondoCielo.style.backgroundSize = "cover";
+        console.log('estoy vivo')   
+    }       
 }
 
 Tama.prototype.comer = function (alimento) {
-
-
     if(this.energia >= 100 ) {
         this.felicidad--;
         this.suciedad--;

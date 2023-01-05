@@ -46,13 +46,14 @@ body {
 
 
 #machanguito {
-    background-image: url(images/jaspi-vivo_min.png);
+   background-image: url(images/jaspi-vivo_min.png);
     position: absolute;
     width: 600px;
     height: 600px;
     background-repeat: no-repeat;
     margin-top: 215px;
     margin-left: 80px;
+    display: none; /*sra esto?*/
 }
 
 #caca{
