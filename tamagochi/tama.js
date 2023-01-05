@@ -49,7 +49,7 @@ Tama.prototype.vida = function () {
 }
 
 Tama.prototype.comer = function (alimento) {
-
+    this.poo.style.display = 'none'
 
     if(this.energia >= 100 ) {
         this.felicidad--;
@@ -78,6 +78,7 @@ Tama.prototype.comer = function (alimento) {
 }
 Tama.prototype.sueño = function () {
    // this.estado = true
+   this.poo.style.display = 'none';
     if (this.energia < 10 ) {
         this.felicidad++;
         this.energia += 20;
@@ -107,6 +108,7 @@ Tama.prototype.toy = function () {
     this.felicidad++;
     this.energia--;
     this.diversion++;
+    this.poo.style.display = 'none';
        if (this.diversion <= 25) {
         this.diversion += 20;
         this.energia +=5;
@@ -170,17 +172,17 @@ Tama.prototype.lavar = function () {
 
 Tama.prototype.apareceCaca = function () {
   
-    if (this.suciedad < 50) {
+    if (this.suciedad <= 20) {
         this.poo.style.display = 'block';//el block modifica el atributo que de base es none
-        this.poo.style.background = 'url(./images/barro-1_min.png)'
+        this.poo.style.background = 'url(./images/barro-3_min.png)'
         console.log('mi amigo huele raro')
-    } else if (this.suciedad < 40) {
-        //this.poo.style.display = 'block';
+    } else if (this.suciedad <= 40) {
+        this.poo.style.display = 'block';
         this.poo.style.background = 'url(./images/barro-2_min.png)'
         console.log('uno más para la colección')
-    } else if (this.suciedad <= 20) { 
-        //this.poo.style.display = 'block';
-        this.poo.style.background = 'url(./images/barro-3_min.png)'
+    } else if (this.suciedad <= 50) { 
+        this.poo.style.display = 'block';
+        this.poo.style.background = 'url(./images/barro-1_min.png)'
        console.log('quiero estar limpio')
     } else {
         this.poo.style.display = 'none'; //quita las cacas

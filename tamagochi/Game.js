@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 100, 100, 100, 60)
+const jaspito = new Tama ('Jaspito', 100, 100, 100, 55)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -30,7 +30,7 @@ function Start() {
    let estadoTemp = setInterval(function(){
       jaspito.estado = false;
       console.log(jaspito.estado)
-   }, 3000);
+   }, 2800);
 
    zampar.addEventListener('click', function() { 
      
