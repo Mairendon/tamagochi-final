@@ -35,18 +35,18 @@ Tama.prototype.vida = function () {
         console.log('estoy muerto')
         //this.machango.innerText = "he muerto"
     } else if(total <= 200 && this.estado === false){ //&&
-        this.machango.style.background =  'url(./images/jaspi-pachucho_feo.png)'; /*imagen jaspi pachucho */
-        this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)';
-        this.fondoCielo.style.backgroundSize = "cover";
-        console.log('estoy pachucho')
+        this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
+        this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
+        this.fondoCielo.style.backgroundSize = "cover"
+        console.log("me siento mal")
         //console.log(this.fondoCielo.style.url)
     } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
         // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
-        this.machango.style.background =  'url(./images/jaspi-vivo_min.png)';/*imagen jaspi :) */
-        this.fondoCielo.style.background = 'url(./images/cielo_bueno_min.jpg)';
-        this.fondoCielo.style.backgroundSize = "cover";
-        console.log('estoy vivo')   
-    }       
+        this.machango.style.background =  "url(./images/jaspi-vivo_min.png)";/*imagen jaspi :) */
+        console.log("It's Alive")
+        
+    }
+        
 }
 
 Tama.prototype.comer = function (alimento) {
@@ -55,10 +55,10 @@ Tama.prototype.comer = function (alimento) {
         this.suciedad--;
         this.estado = true 
         console.log(this.estado)
-        this.machango.style.background = "url(./images/cama.png)" //poner gif de comida
+        this.machango.style.background = "url(./images/dormir.png)" //poner gif de comida
         return 'Estoy llenito'
     } else if( this.energia > 0 && this.energia < 30 ) {
-        this.machango.style.background = "url(./images/cama.png)" //poner gif de comida
+        this.machango.style.background = "url(./images/dormir.png)" //poner gif de comida
         this.felicidad += 20;
         this.energia += 5;
         this.suciedad--;
@@ -69,7 +69,7 @@ Tama.prototype.comer = function (alimento) {
         this.energia++;
         this.suciedad -= 5;
         this.estado = true
-        this.machango.style.background = "url(./images/cama.png)" //poner gif de comida
+        this.machango.style.background = "url(./images/dormir.png)" //poner gif de comida
         return ('por pura gula')
     } else { 
         return 'Los muertos no hablan'
@@ -77,7 +77,7 @@ Tama.prototype.comer = function (alimento) {
 }
 Tama.prototype.sueño = function () {
    // this.estado = true
-    if (this.energia < 10 ){
+    if (this.energia < 10 ) {
         this.felicidad++;
         this.energia += 20;
         this.estado == true
@@ -85,7 +85,7 @@ Tama.prototype.sueño = function () {
         this.estado = true
         console.log(this.estado)
         return 'Auxilio me desmayo...zzZZ'
-    } else if (this.energia <= 100 && this.energia >= 80 ){
+    } else if (this.energia <= 100 && this.energia >= 80) {
         this.felicidad--;
         this.energia++;
         this.diversion--;
@@ -106,20 +106,20 @@ Tama.prototype.toy = function () {
     this.felicidad++;
     this.energia--;
     this.diversion++;
-       if (this.diversion <= 25){
+       if (this.diversion <= 25) {
         this.diversion += 20;
         this.energia +=5;
         this.suciedad--;
         this.estado = true
-        this.machango.style.background = "url(./images/ducha.png)" //cambiar por imagen de juego
+        this.machango.style.background = "url(./images/bo-jugar.png)" //cambiar por imagen de juego
         return 'Me matas de aburrimiento'
-    } else if (this.diversion > 40){
+    } else if (this.diversion > 40) {
         this.felicidad++;
         this.energia -= 10;
         this.diversion += 15;
         this.suciedad--;
         this.estado = true
-        this.machango.style.background = "url(./images/ducha.png)"//cambiar por imagen de juego
+        this.machango.style.background = "url(./images/bo-jugar.png)"//cambiar por imagen de juego
         return '¡Quiero jugar!'
     } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 || this.felicidad >= 100) {
         this.felicidad++;
@@ -127,7 +127,7 @@ Tama.prototype.toy = function () {
         this.diversion++;
         this.suciedad--;
         this.estado = true
-        this.machango.style.background = "url(./images/ducha.png)"//cambiar por imagen de juego
+        this.machango.style.background = "url(./images/bo-jugar.png)"//cambiar por imagen de juego
         return '¡No me canso de jugar!'
     } else {
         this.felicidad++;
@@ -156,7 +156,7 @@ Tama.prototype.lavar = function () {
         this.suciedad += 10;
         this.estado = false
         return 'No me quiero lavar no me voy a duchar asi cochino me quiero quedar'
-    } else if (this.suciedad >=100 ){
+    } else if (this.suciedad >=100 ) {
         this.felicidad -= 10;
         this.energia--;
         this.diversion -= 15;
@@ -166,22 +166,23 @@ Tama.prototype.lavar = function () {
         return '¡Que ya estoy limpio!'
     }
 }
+
 Tama.prototype.apareceCaca = function () {
   
-    if (this.suciedad < 50){
-        this.poo.style.display = 'block' //el block modifica el atributo que de base es none
-        this.poo.background = 'url(./images/barro-1_min.png)'
+    if (this.suciedad < 50) {
+        this.poo.style.display = 'block';//el block modifica el atributo que de base es none
+        this.poo.style.background = 'url(./images/barro-1_min.png)'
         console.log('mi amigo huele raro')
-    } else if (this.suciedad < 40){
-        this.poo.style.display = 'block'
-        this.poo.background = 'url(./images/barro-2_min.png)'
+    } else if (this.suciedad < 40) {
+        //this.poo.style.display = 'block';
+        this.poo.style.background = 'url(./images/barro-2_min.png)'
         console.log('uno más para la colección')
-    } else if (this.suciedad <= 20){ 
-        this.poo.style.display = 'block'
-        this.poo.src = 'url(./images/barro-3_min.png)'
+    } else if (this.suciedad <= 20) { 
+        //this.poo.style.display = 'block';
+        this.poo.style.background = 'url(./images/barro-3_min.png)'
        console.log('quiero estar limpio')
     } else {
-        this.poo.style.display = 'none' //quita las cacas
+        this.poo.style.display = 'none'; //quita las cacas
         console.log('limpito como una patena')
     }
 }

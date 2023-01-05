@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 100, 100, 100, 80)
+const jaspito = new Tama ('Jaspito', 100, 100, 100, 60)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -16,15 +16,22 @@ function Start() {
    var temporizador = setInterval(function() {
       jaspito.apareceCaca()
       jaspito.bindedVida()
+      //jaspito.estado = false;
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 || jaspito.suciedad <= 0) {
          clearInterval(temporizador)
          jaspito.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
          jaspito.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
          jaspito.fondoCielo.style.backgroundSize = "cover"
+         jaspito.poo.style.display = 'none'; //desaparece caca muerto
          console.log ('¡Españoles Jaspito ha muerto!')
       }
-   }, 400);
+   }, 4000);
    
+   let estadoTemp = setInterval(function(){
+      jaspito.estado = false;
+      console.log(jaspito.estado)
+   }, 3000);
+
    zampar.addEventListener('click', function() { 
      
       console.log(jaspito.comer())
@@ -49,7 +56,8 @@ function Start() {
 
 Start();
 /*
-const statusLoop = setInterval(jaspito.vida() , 4000)
+
+const bottLoop = setInterval(jaspito.vida() , 4000)
 function gameloop(){
     update()
     draw()
