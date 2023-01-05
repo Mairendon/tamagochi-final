@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 100, 100, 100, 55)
+const jaspito = new Tama ('Jaspito', 50, 50, 50, 50)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -16,7 +16,7 @@ function Start() {
    var temporizador = setInterval(function() {
       jaspito.apareceCaca()
       jaspito.bindedVida()
-      //jaspito.estado = false;
+      jaspito.estado = false;
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 || jaspito.suciedad <= 0) {
          clearInterval(temporizador)
          jaspito.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
@@ -26,26 +26,29 @@ function Start() {
          console.log ('¡Españoles Jaspito ha muerto!')
       }
    }, 4000);
-   
-   let estadoTemp = setInterval(function(){
+   /*
+   let estadoTemp = setInterval(function() {
       jaspito.estado = false;
       console.log(jaspito.estado)
-   }, 2800);
+   }, 4500);*/
 
    zampar.addEventListener('click', function() { 
-     
+      jaspito.estado = true
       console.log(jaspito.comer())
       sonidoMasticar.play()
    })
    mimir.addEventListener('click', function() {
+      jaspito.estado = true
       console.log(jaspito.sueño())
       sonidoDormir.play()
    })
    games.addEventListener('click', function(){
-     console.log(jaspito.toy())
+      jaspito.estado = true
+      console.log(jaspito.toy())
      sonidoJugar.play()
    })
    baniar.addEventListener('click', function(){
+      jaspito.estado = true
       console.log(jaspito.lavar())
       sonidoDucha.play()
       rain()
