@@ -11,13 +11,13 @@ const sonidoMasticar = new Audio("./sonidos/masticar.mp3")
 const sonidoDormir = new Audio("./sonidos/roncar.mp3")
 const sonidoDucha = new Audio("./sonidos/ducha.mp3")
 const sonidoJugar = new Audio("./sonidos/jugar.mp3")
-
+/*
 var tiempoEstado = function() {
    setInterval(function() {
    jaspito.estado = false;
    console.log(jaspito.estado)
 }, 5000)
-}
+}*/
 
 function Start() {
    var temporizador = setInterval(function() {
@@ -34,26 +34,37 @@ function Start() {
          console.log ('¡Españoles Jaspito ha muerto!')
       }
       console.log(jaspito.estado)
-   }, 4000);
-  
+   
+   }, 3000);
    
    zampar.addEventListener('click', function() { 
-      //jaspito.estado = true
-      console.log(jaspito.comer())
-      sonidoMasticar.play()
-      tiempoEstado()
-      console.log(jaspito.estado)
+      /*var comilona = setInterval(function() {
+         jaspito.estado = true;
+         console.log(jaspito.estado)
+         console.log(jaspito.comer() );
+         sonidoMasticar.play();
+         if(jaspito.estado = true){
+            clearInterval(comilona)
+            jaspito.estado = false;
+         }
+      }, 1500)*/
+      //jaspito.estado = true;
+      //tiempoEstado()
+      
+      console.log(jaspito.comer() );
+         sonidoMasticar.play();
+         console.log(jaspito.estado)
    })
    mimir.addEventListener('click', function() {
-      //jaspito.estado = true
-      console.log(jaspito.sueño())
+      //jaspito.estado = true;
+      console.log(jaspito.sueño() );
       sonidoDormir.play()
       //tiempoEstado()
       console.log(jaspito.estado)
    })
    games.addEventListener('click', function(){
-      //jaspito.estado = true
-      console.log(jaspito.toy())
+      //jaspito.estado = true;
+      console.log(jaspito.toy()) ;
       sonidoJugar.play()
       //tiempoEstado()
       console.log(jaspito.estado)
