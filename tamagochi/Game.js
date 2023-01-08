@@ -11,13 +11,13 @@ const sonidoMasticar = new Audio("./sonidos/masticar.mp3")
 const sonidoDormir = new Audio("./sonidos/roncar.mp3")
 const sonidoDucha = new Audio("./sonidos/ducha.mp3")
 const sonidoJugar = new Audio("./sonidos/jugar.mp3")
-/*
+
 var tiempoEstado = function() {
    setInterval(function() {
    jaspito.estado = false;
    console.log(jaspito.estado)
 }, 5000)
-}*/
+}
 
 function Start() {
    var temporizador = setInterval(function() {
