@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 50, 50, 50, 50)
+const jaspito = new Tama ('Jaspito', 100, 100, 100, 60)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -11,13 +11,13 @@ const sonidoMasticar = new Audio("./sonidos/masticar.mp3")
 const sonidoDormir = new Audio("./sonidos/roncar.mp3")
 const sonidoDucha = new Audio("./sonidos/ducha.mp3")
 const sonidoJugar = new Audio("./sonidos/jugar.mp3")
-
+/*
 var tiempoEstado = function() {
    setInterval(function() {
    jaspito.estado = false;
    console.log(jaspito.estado)
 }, 5000)
-}
+}*/
 
 function Start() {
    var temporizador = setInterval(function() {
@@ -28,6 +28,8 @@ function Start() {
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 || jaspito.suciedad <= 0) {
          clearInterval(temporizador)
          jaspito.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
+         jaspito.machango.style.backgroundSize =  "contain";
+         jaspito.machango.style.backgroundRepeat = "no-repeat"; /* estilos jaspi pequeño*/
          jaspito.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
          jaspito.fondoCielo.style.backgroundSize = "cover"
          jaspito.poo.style.display = 'none'; //desaparece caca muerto
@@ -82,14 +84,12 @@ function Start() {
 Start();
 
 /*
-
 const bottLoop = setInterval(jaspito.vida() , 4000)
 function gameloop(){
     update()
     draw()
     setInterval(perderenergia, 4000)
 }
-
  
  
  function perderenergia (){
@@ -97,5 +97,3 @@ function gameloop(){
  }
  
     */
-
-  

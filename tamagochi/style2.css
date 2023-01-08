@@ -47,23 +47,30 @@ body {
 
 
 #machanguito {
+    /*background-image: url(images/jaspi-vivo_min.png);
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-repeat: no-repeat;
+    margin-top: 215px;
+    margin-left: 80px;*/
     background-image: url(images/jaspi-vivo_min.png);
     position: absolute;
-    width: 470px;
-    margin-top: 80px;
-    margin-left: 15px;
+    width: 430px;
+    margin-top: 100px;
+    margin-left: 50px;
     height: inherit;
     background-repeat: no-repeat;
     background-size: contain;
-    display: none;/* sra esto?*/
+   /* display: none; sra esto?*/
 }
 
 #caca{
     background-image: url();
     position: absolute;
-    width: 470px;
-    margin-top: 80px;
-    margin-left: 15px;
+    width: 430px;
+    margin-top: 100px;
+    margin-left: 50px;
     height: inherit;
     background-repeat: no-repeat;
     background-size: contain;
