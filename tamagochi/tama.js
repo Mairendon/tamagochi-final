@@ -74,7 +74,7 @@ Tama.prototype.comer = function (alimento) {
         this.energia++;
         this.suciedad -= 5;
         this.estado = true
-        this.poo.style.display = 'none';
+        //this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/dormir.png)" //poner gif de comida
         return ('por pura gula')
     } else {
