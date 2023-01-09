@@ -75,7 +75,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 1;
-    display: none; /* hace que la caca esté pero escondida*/
+    display: none;
 }
 
 /* navegador */

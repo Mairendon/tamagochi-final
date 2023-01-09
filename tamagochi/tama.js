@@ -6,7 +6,6 @@ export function Tama(nombre, felicidad, energia, diversion, suciedad){
     this.suciedad = suciedad;
     //this.salud = salud;
     //this.amor = amor;
-    //this.mensaje = "Hazme caso desgraciao"
     this.poo = document.getElementById('caca')
     this.time = 1 //time
     this.estado = false
@@ -34,14 +33,10 @@ Tama.prototype.vida = function () {
         this.machango.style.backgroundRepeat = "no-repeat"; 
         this.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
-    
     } else if(total <= 200 && this.estado === false){ 
-        this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; 
-        //this.machango.innerText = "he muerto"
-    } else if(total <= 200 && this.estado === false){ //&&
-        this.machango.style.background =  "url(./images/jaspi-pachu_min.png)"; /*imagen jaspi pachucho */
-        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.background =  "url(./images/jaspi-pachu_min.png)"; 
         this.machango.style.backgroundRepeat = "no-repeat";
+        this.machango.style.backgroundSize =  "contain";
         this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         console.log("me siento mal")
@@ -82,7 +77,7 @@ Tama.prototype.comer = function (alimento) {
         this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/comiendo_prueba.gif)" 
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/comiendo_prueba.gif)" //poner gif de comida
+        this.machango.style.background = "url(./images/comiendo_prueba.gif)" 
         return ('por pura gula')
     } else {
         this.estado = true;
@@ -135,8 +130,7 @@ Tama.prototype.toy = function () {
         this.suciedad--;
         this.poo.style.display = 'none';
         this.estado = true
-        this.machango.style.background = "url(./images/bo-jugar.png)" 
-        this.machango.style.background = "url(./images/jugando_prueba.gif)" //cambiar por imagen de juego
+        this.machango.style.background = "url(./images/jugando_prueba.gif)"
         return 'Me matas de aburrimiento'
     } else if (this.diversion > 40) {
         this.felicidad += 10;
@@ -145,8 +139,7 @@ Tama.prototype.toy = function () {
         this.suciedad--;
         this.estado = true
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/bo-jugar.png)"
-        this.machango.style.background = "url(./images/jugando_prueba.gif)"//cambiar por imagen de juego
+        this.machango.style.background = "url(./images/jugando_prueba.gif)"
         return '¡Quiero jugar!'
     } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 || this.felicidad >= 100) {
         this.felicidad++ ;
@@ -155,8 +148,7 @@ Tama.prototype.toy = function () {
         this.suciedad-- ;
         this.estado = true
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/bo-jugar.png)"
-        this.machango.style.background = "url(./images/jugando_prueba.gif)"//cambiar por imagen de juego
+        this.machango.style.background = "url(./images/jugando_prueba.gif)"
         return '¡No me canso de jugar!'
     } else {
         this.felicidad++ ;

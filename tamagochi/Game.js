@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 100, 100, 100, 60)
+const jaspito = new Tama ('Jaspito', 50, 50, 50, 60)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
@@ -16,7 +16,8 @@ const sonidoJugar = new Audio("./sonidos/jugar.mp3")
 function Start() {
    var temporizador = setInterval(function() {
       jaspito.apareceCaca()
-      jaspito.bindedVida()      
+      jaspito.bindedVida()
+      jaspito.estado = false     
       if (jaspito.felicidad <= 0 || jaspito.energia <= 0 || jaspito.diversion <= 0 || jaspito.suciedad <= 0) {
          clearInterval(temporizador)
          jaspito.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; 
