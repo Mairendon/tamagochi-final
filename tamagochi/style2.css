@@ -41,7 +41,7 @@ body {
 }
 
 @keyframes movebg {
-    0% { background-position:800px }
+    0% { background-position:500px }
     100% { background-position:0 }
   }
 
