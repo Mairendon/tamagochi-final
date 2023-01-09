@@ -31,11 +31,16 @@ Tama.prototype.vida = function () {
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
         this.machango.style.background = 'url(./images/jaspi-muerto_min.png)'; /*imagen jaspi muerto */
+        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.backgroundRepeat = "no-repeat"; /* estilos jaspi pequeño*/
         this.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         //this.machango.innerText = "he muerto"
     } else if(total <= 200 && this.estado === false){ //&&
         this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
+        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.backgroundRepeat = "no-repeat";
+        /* Arreglando los estilos de jaspito con contain y no-repeat*/
         this.fondoCielo.style.background = 'url(./images/cielo_critico_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         console.log("me siento mal")
@@ -43,6 +48,8 @@ Tama.prototype.vida = function () {
     } else if(total > 200 && this.estado === false) { //&& añadir otro estado si esta ocurriendo no funcionar
         // this.machango.src = "images/vivo.png"; /*imagen jaspi :) */
         this.machango.style.background =  "url(./images/jaspi-vivo_min.png)";/*imagen jaspi :) */
+        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.backgroundRepeat = "no-repeat"; 
         this.fondoCielo.style.background = 'url(./images/cielo_bueno_min.jpg)'
         this.fondoCielo.style.backgroundSize = "cover"
         console.log("It's Alive")
@@ -58,7 +65,7 @@ Tama.prototype.comer = function (alimento) {
         this.estado = true 
         console.log(this.estado)
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/dormir.png)" //poner gif de comida
+        this.machango.style.background = "url(./images/comiendo_prueba.gif)" //poner gif de comida
         return 'Estoy llenito'
     } else if( this.energia > 0 && this.energia < 30 ) {
         this.felicidad += 20;
@@ -66,7 +73,7 @@ Tama.prototype.comer = function (alimento) {
         this.suciedad--;
         this.estado = true
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/dormir.png)" //poner gif de comida
+        this.machango.style.background = "url(./images/comiendo_prueba.gif)" //poner gif de comida
         return '¡DAAME DE COMER!'
     } else if ( this.energia >= 30 && this.energia < 100 ) {
         this.felicidad++;
@@ -79,7 +86,7 @@ Tama.prototype.comer = function (alimento) {
     } else {
         this.estado = true;
         this.poo.style.display = 'none' ;
-        this.machango.style.background = "url(./images/dormir.png)"
+        this.machango.style.background = "url(./images/comiendo_prueba.gif)"
         return 'Los muertos no hablan'
     } 
 }
@@ -91,7 +98,9 @@ Tama.prototype.sueño = function () {
         this.estado = true
         console.log(this.estado)
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/jaspi-duerme600.gif)"
+        this.machango.style.background = "url(./images/durmiendo_prueba.gif)"
+        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.backgroundRepeat = "no-repeat"; /* estilos jaspi pequeño*/
         return 'Auxilio me desmayo...zzZZ'
     } else if (this.energia <= 100 && this.energia >= 80) {
         this.felicidad--;
@@ -100,7 +109,9 @@ Tama.prototype.sueño = function () {
         this.estado = true;
         console.log(this.estado)
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/jaspi-duerme600.gif)"
+        this.machango.style.background = "url(./images/durmiendo_prueba.gif)"
+        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.backgroundRepeat = "no-repeat"; /* estilos jaspi pequeño*/
         return '¡¡No quiero dormir!!'
     } else {
         this.felicidad-- ;
@@ -108,7 +119,9 @@ Tama.prototype.sueño = function () {
         this.diversion++ ;
         this.estado = true;
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/jaspi-duerme600.gif)"
+        this.machango.style.background = "url(./images/durmiendo_prueba.gif)"
+        this.machango.style.backgroundSize =  "contain";
+        this.machango.style.backgroundRepeat = "no-repeat"; /* estilos jaspi pequeño*/
         console.log(this.estado)
         return 'Quiero dormir'
     }
@@ -191,16 +204,20 @@ Tama.prototype.apareceCaca = function () {
         //this.diversion -= 5;
         this.poo.style.display = 'block';//el block modifica el atributo que de base es none
         this.poo.style.background = 'url(./images/barro-3_min.png)'
+        this.poo.style.backgroundSize =  "contain";
+        /* contein para arreglar el tamaño de la caca y jaspito*/
         console.log('quiero estar limpio')
     } else if (this.suciedad <= 40 && this.estado === false) {
         //this.diversion -= 8;
         this.poo.style.display = 'block';
         this.poo.style.background = 'url(./images/barro-2_min.png)'
+        this.poo.style.backgroundSize =  "contain";
         console.log('uno más para la colección')
     } else if (this.suciedad <= 50 && this.estado === false) { 
         //this.suciedad -= 4;
         this.poo.style.display = 'block';
         this.poo.style.background = 'url(./images/barro-1_min.png)'
+        this.poo.style.backgroundSize =  "contain";
         console.log('juego con barro')
     } else {
         this.poo.style.display = 'none'; //quita las cacas
