@@ -158,19 +158,19 @@ footer {
     margin-top: 50px;
 }
 #consola{
-    background-color: #4075bd;
-    width: 450px;
+    background-color: #767676;
+    width: 500px;
     height: 100px;
     margin: 0 auto;
-    float: left;
-    /*margin-left: 20%;*/
     opacity: 0.6;
     border-radius: 25px;
+    position: relative;
+    display: none;
 }
 .status {
     display: inline-block;
     width: 80px;
-    background-color: aqua;
+    background-color: #f1f1f1;
     margin: 0 auto;
     border-radius: 4px;
     padding: 3px 3px;
