@@ -23,10 +23,10 @@ Tama.prototype.vida = function () {
     this.energia = this.energia - this.time ; //* 2 
     this.diversion = this.diversion - this.time  ; //*2
     this.suciedad = this.suciedad - this.time;
-    document.getElementById('felicidad').innerText = this.felicidad + '%';
-    document.getElementById('energia').innerText = this.energia + '%';
-    document.getElementById('diversion').innerText = this.diversion + '%';
-    document.getElementById('suciedad').innerText = this.suciedad + '%'; 
+    document.getElementById('felicidad').innerText = this.felicidad + '% FE';
+    document.getElementById('energia').innerText = this.energia + '% EN';
+    document.getElementById('diversion').innerText = this.diversion + '% DI';
+    document.getElementById('suciedad').innerText = this.suciedad + '% SU'; 
 
     var total = this.felicidad + this.energia + this.diversion + this.suciedad;
     if( this.felicidad <= 0 || this.energia <= 0 || this.diversion <= 0 || this.suciedad <= 0){
@@ -37,7 +37,7 @@ Tama.prototype.vida = function () {
         this.fondoCielo.style.backgroundSize = "cover"
         //this.machango.innerText = "he muerto"
     } else if(total <= 200 && this.estado === false){ //&&
-        this.machango.style.background =  "url(./images/jaspi-pachucho_feo.png)"; /*imagen jaspi pachucho */
+        this.machango.style.background =  "url(./images/jaspi-pachu_min.png)"; /*imagen jaspi pachucho */
         this.machango.style.backgroundSize =  "contain";
         this.machango.style.backgroundRepeat = "no-repeat";
         /* Arreglando los estilos de jaspito con contain y no-repeat*/
@@ -80,7 +80,7 @@ Tama.prototype.comer = function (alimento) {
         this.energia++;
         this.suciedad -= 5;
         this.estado = true
-        //this.poo.style.display = 'none';
+        this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/comiendo_prueba.gif)" //poner gif de comida
         return ('por pura gula')
     } else {
@@ -137,7 +137,7 @@ Tama.prototype.toy = function () {
         this.suciedad--;
         this.poo.style.display = 'none';
         this.estado = true
-        this.machango.style.background = "url(./images/bo-jugar.png)" //cambiar por imagen de juego
+        this.machango.style.background = "url(./images/jugando_prueba.gif)" //cambiar por imagen de juego
         return 'Me matas de aburrimiento'
     } else if (this.diversion > 40) {
         this.felicidad += 10;
@@ -146,7 +146,7 @@ Tama.prototype.toy = function () {
         this.suciedad--;
         this.estado = true
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/bo-jugar.png)"//cambiar por imagen de juego
+        this.machango.style.background = "url(./images/jugando_prueba.gif)"//cambiar por imagen de juego
         return '¡Quiero jugar!'
     } else if (this.diversion >= 100 || this.felicidad >= 100 && this.diversion >= 100 || this.felicidad >= 100) {
         this.felicidad++ ;
@@ -155,7 +155,7 @@ Tama.prototype.toy = function () {
         this.suciedad-- ;
         this.estado = true
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/bo-jugar.png)"//cambiar por imagen de juego
+        this.machango.style.background = "url(./images/jugando_prueba.gif)"//cambiar por imagen de juego
         return '¡No me canso de jugar!'
     } else {
         this.felicidad++ ;
@@ -163,7 +163,7 @@ Tama.prototype.toy = function () {
         this.diversion += 5;
         this.suciedad-- ;
         this.poo.style.display = 'none';
-        this.machango.style.background = "url(./images/bo-jugar.png)"
+        this.machango.style.background = "url(./images/jugando_prueba.gif)"
     }
     
 }
