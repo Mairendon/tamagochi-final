@@ -26,7 +26,6 @@ function Start() {
          jaspito.fondoCielo.style.background = 'url(./images/cielo_negro_min.jpg)'
          jaspito.fondoCielo.style.backgroundSize = "cover"
          jaspito.poo.style.display = 'none'; 
-         console.log ('¡Españoles Jaspito ha muerto!')
       }
       console.log(jaspito.estado)
    }, 3000);
