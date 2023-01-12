@@ -12,11 +12,11 @@ export function Tama(nombre, felicidad, energia, diversion, suciedad){
     this.bindedVida = this.vida.bind(this)
     this.machango = document.getElementById('machanguito')
     this.fondoCielo = document.getElementsByClassName('cielo')[0]
-    
 
 }
 
 Tama.prototype.vida = function () {
+    this.time = 1;
     this.felicidad = this.felicidad - this.time;
     this.energia = this.energia - this.time ; 
     this.diversion = this.diversion - this.time  ; 
@@ -55,10 +55,8 @@ Tama.prototype.comer = function (alimento) {
         this.felicidad--;
         this.suciedad--;
         this.estado = true 
-        console.log(this.estado)
         this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/comiendo_prueba.gif)" 
-        
     } else if( this.energia > 0 && this.energia < 30 ) {
         this.felicidad += 20;
         this.energia += 5;
@@ -71,6 +69,7 @@ Tama.prototype.comer = function (alimento) {
         this.energia++;
         this.suciedad -= 5;
         this.estado = true
+        this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/comiendo_prueba.gif)" 
         this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/comiendo_prueba.gif)" 
@@ -85,7 +84,6 @@ Tama.prototype.sueño = function () {
         this.felicidad++;
         this.energia += 20;
         this.estado = true
-        console.log(this.estado)
         this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/durmiendo_prueba.gif)"
         this.machango.style.backgroundSize =  "contain";
@@ -95,7 +93,6 @@ Tama.prototype.sueño = function () {
         this.energia++;
         this.diversion--;
         this.estado = true;
-        console.log(this.estado)
         this.poo.style.display = 'none';
         this.machango.style.background = "url(./images/durmiendo_prueba.gif)"
         this.machango.style.backgroundSize =  "contain";
@@ -109,7 +106,6 @@ Tama.prototype.sueño = function () {
         this.machango.style.background = "url(./images/durmiendo_prueba.gif)"
         this.machango.style.backgroundSize =  "contain";
         this.machango.style.backgroundRepeat = "no-repeat"; 
-        console.log(this.estado)
     }
 }
 Tama.prototype.toy = function () {
@@ -159,7 +155,6 @@ Tama.prototype.lavar = function () {
         this.diversion +=20 ;
         this.suciedad += 20; 
         this.estado = false
-        console.log(this.estado)
     } else if (this.suciedad <= 60) {
         this.felicidad++ ;
         this.energia--;
@@ -172,7 +167,6 @@ Tama.prototype.lavar = function () {
         this.diversion -= 15;
         this.suciedad +=2;
         this.estado = false
-        console.log(this.estado)
     }
 }
 
