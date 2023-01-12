@@ -1,7 +1,7 @@
 import { Tama } from "./tama.js"
 import { rain } from "./lluvia.js"
 
-const jaspito = new Tama ('Jaspito', 2, 100, 100, 60)
+const jaspito = new Tama ('Jaspito', 50, 50, 50, 60)
 
 const zampar = document.getElementById('comida')
 const mimir = document.getElementById('cama')
